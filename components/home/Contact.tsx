@@ -1,0 +1,200 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const handleSubmit = async (e: unknown) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simular envío
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    setTimeout(() => setSubmitSuccess(false), 3000);
+  };
+
+  const contactInfo = [
+    { icon: Phone, text: "+34 123 456 789" },
+    { icon: Mail, text: "hola@nutrivida.com" },
+    { icon: MapPin, text: "Madrid, España" },
+  ];
+
+  return (
+    <section id="contacto" className="py-24 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ color: "var(--primary-green)" }}
+          >
+            Agenda Tu Consulta
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Da el primer paso hacia una vida más saludable. Estoy aquí para
+            ayudarte
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Card className="border-none shadow-xl">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Input
+                      placeholder="Tu Nombre"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      required
+                      className="h-12"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="email"
+                      placeholder="Tu Email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      required
+                      className="h-12"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="tel"
+                      placeholder="Tu Teléfono"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      required
+                      className="h-12"
+                    />
+                  </div>
+                  <div>
+                    <Textarea
+                      placeholder="Cuéntame sobre tus objetivos..."
+                      value={formData.message}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
+                      required
+                      className="min-h-32"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-12 text-lg rounded-full"
+                    style={{ backgroundColor: "var(--primary-green)" }}
+                  >
+                    {isSubmitting ? (
+                      "Enviando..."
+                    ) : submitSuccess ? (
+                      "¡Mensaje Enviado!"
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Enviar Mensaje
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div>
+              <h3
+                className="text-2xl font-bold mb-6"
+                style={{ color: "var(--primary-green)" }}
+              >
+                Información de Contacto
+              </h3>
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-center gap-4">
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: "var(--accent-gold)" + "20" }}
+                    >
+                      <info.icon
+                        className="w-5 h-5"
+                        style={{ color: "var(--accent-gold)" }}
+                      />
+                    </div>
+                    <span className="text-gray-700 text-lg">{info.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop"
+                alt="Alimentos saludables"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+
+            <Card
+              className="border-none"
+              style={{ backgroundColor: "var(--light-bg)" }}
+            >
+              <CardContent className="p-6">
+                <h4
+                  className="font-bold mb-2"
+                  style={{ color: "var(--primary-green)" }}
+                >
+                  Horario de Atención
+                </h4>
+                <p className="text-gray-600">Lunes a Viernes: 9:00 - 20:00</p>
+                <p className="text-gray-600">Sábados: 9:00 - 14:00</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
