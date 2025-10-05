@@ -121,8 +121,8 @@
   }
 }
 
-@tailwind base;
-@tailwind components;
+@tailwindcss preflight;
+@tailwind utilities;
 @tailwind utilities;
 
 /* 🎨 Variables globales */
