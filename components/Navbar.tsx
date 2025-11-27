@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -9,7 +9,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const isPrivacyPage = pathname === "/politica-privacidad";
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -18,10 +20,17 @@ export default function Navbar() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+    setIsMenuOpen(false);
+    
+    if (!isHomePage) {
+      // If not on home page, navigate to home with hash
+      router.push(`/#${id}`);
+    } else {
+      // If on home page, scroll to section
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -33,7 +42,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <button
-          onClick={() => scrollToSection("hero")}
+          onClick={() => isHomePage ? scrollToSection("hero") : router.push("/")}
           className="text-2xl font-bold tracking-tight"
           style={{ color: isPrivacyPage || isScrolled ? "#2D5F3F" : "white" }}
         >

@@ -143,8 +143,6 @@ export default function Contact() {
                           He leído y acepto la{" "}
                           <a
                             href="/politica-privacidad"
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className="text-[var(--primary-green)] underline hover:opacity-80"
                           >
                             Política de Privacidad
