@@ -259,9 +259,9 @@ export default function Contact() {
         onClose={() => setIsModalOpen(false)}
         title="Reserva tu Cita"
       >
-        <div className="w-full h-full min-h-[600px]">
+        <div className="w-full h-full">
           <iframe
-            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2..."
+            src="https://calendar.app.google/ymAuJv4RihCrYTqG8"
             style={{ border: 0 }}
             width="100%"
             height="100%"

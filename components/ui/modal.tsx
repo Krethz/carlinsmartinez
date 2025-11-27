@@ -55,7 +55,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden pointer-events-auto flex flex-col"
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[90vh] overflow-hidden pointer-events-auto flex flex-col"
             >
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
@@ -71,7 +71,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
               </div>
 
               {/* Content */}
-              <div className="flex-1 overflow-y-auto p-0 bg-gray-50">
+              <div className="flex-1 overflow-hidden">
                 {children}
               </div>
             </motion.div>
