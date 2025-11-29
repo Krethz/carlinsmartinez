@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="py-12 px-6 bg-[#2D5F3F] text-white">
@@ -17,24 +19,24 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-3">Enlaces</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/#servicios" className="opacity-80 hover:opacity-100 transition">
+                <Link href="/#servicios" className="opacity-80 hover:opacity-100 transition">
                   Servicios
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#contacto" className="opacity-80 hover:opacity-100 transition">
+                <Link href="/#contacto" className="opacity-80 hover:opacity-100 transition">
                   Contacto
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/politica-privacidad" className="opacity-80 hover:opacity-100 transition">
+                <Link href="/politica-privacidad" className="opacity-80 hover:opacity-100 transition">
                   Política de Privacidad
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terminos-condiciones" className="opacity-80 hover:opacity-100 transition">
+                <Link href="/terminos-condiciones" className="opacity-80 hover:opacity-100 transition">
                   Términos y Condiciones
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Activity, Trophy, Baby, Leaf, Utensils, BookOpen, Ruler } from "lucide-react";
+import { Activity, Trophy, Baby, Leaf, BookOpen, Ruler } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Services() {
