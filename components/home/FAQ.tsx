@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, FileText, Video, CreditCard, Clock, AlertCircle } from "lucide-react";
+import { Calendar, FileText, Video, CreditCard, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function FAQ() {
   const onlineProcess = [
@@ -46,7 +47,6 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center" style={{ color: 'var(--primary-green)' }}>
             ¿Cómo funciona la Consulta online?
@@ -98,72 +98,26 @@ export default function FAQ() {
               className="rounded-lg w-full max-w-lg mx-auto object-cover shadow-xl"
             />
           </motion.div>
-        </motion.div>
 
-        {/* Payment and Cancellation Policy */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center" style={{ color: 'var(--primary-green)' }}>
-            Pagos y Política de Cancelación de Visita
-          </h2>
-
-          <Card className="border-none shadow-xl max-w-4xl mx-auto">
-            <CardContent className="p-8 md:p-12">
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <AlertCircle className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--primary-green)' }} />
-                  <div>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      Una vez <strong>programada la primera visita</strong>, será necesario realizar un pago anticipado del <strong>50% del importe total de la sesión</strong> mediante transferencia bancaria. <strong>El 50% restante deberá abonarse al finalizar la primera visita.</strong>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <CreditCard className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--primary-green)' }} />
-                  <div>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      El pago correspondiente a la entrega de la pauta y a las sesiones de seguimiento se efectuará al término de cada una, pudiendo realizarse en efectivo (sesiones presenciales) o mediante transferencia bancaria (sesiones online y presenciales).
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg mt-6">
-                  <h4 className="font-bold mb-3" style={{ color: 'var(--primary-green)' }}>
-                    Número de cuenta bancaria:
-                  </h4>
-                  <p className="text-2xl font-mono font-bold text-center" style={{ color: 'var(--primary-green)' }}>
-                    ES44 2100 0362 1402 0077 3521
-                  </p>
-                  <p className="text-sm text-gray-600 text-center mt-2">
-                    El importe de la reserva deberá ingresarse en el siguiente número de cuenta, indicando el nombre y los apellidos de la persona que solicita el servicio.
-                  </p>
-                  <p className="text-sm text-gray-700 text-center mt-4 font-semibold">
-                    Nota: La reserva se considerará confirmada una vez recibido el comprobante de pago.
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-4 pt-6 border-t border-gray-200">
-                  <Clock className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: 'var(--primary-green)' }} />
-                  <div>
-                    <h4 className="font-bold mb-3" style={{ color: 'var(--primary-green)' }}>
-                      Política de Cancelación:
-                    </h4>
-                    <p className="text-gray-700 leading-relaxed">
-                      En caso de no poder asistir a la visita agendada, <strong>deberá comunicarse la cancelación o cambio con un mínimo de 24 horas de antelación</strong>, con el fin de poder reprogramar la sesión en otro día y horario disponibles.
-                    </p>
-                    <p className="text-gray-700 leading-relaxed mt-4">
-                      De no realizarse dicho aviso dentro del plazo establecido, <strong>se perderá el importe correspondiente a la reserva.</strong>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Button to payment policy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <p className="text-gray-600 mb-4">
+              Para más información sobre tarifas, pagos y política de cancelación:
+            </p>
+            <Button
+              onClick={() => window.location.href = '/terminos-condiciones'}
+              className="rounded-full px-8 py-6"
+              style={{ backgroundColor: 'var(--primary-green)' }}
+            >
+              Ver Términos y Condiciones
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -10,7 +10,6 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  const isPrivacyPage = pathname === "/politica-privacidad";
   const isHomePage = pathname === "/";
 
   useEffect(() => {
@@ -37,14 +36,14 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isPrivacyPage || isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        !isHomePage || isScrolled ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <button
           onClick={() => isHomePage ? scrollToSection("hero") : router.push("/")}
           className="text-2xl font-bold tracking-tight"
-          style={{ color: isPrivacyPage || isScrolled ? "#2D5F3F" : "white" }}
+          style={{ color: !isHomePage || isScrolled ? "#2D5F3F" : "white" }}
         >
           Carla Martínez
         </button>
@@ -59,7 +58,7 @@ export default function Navbar() {
                   scrollToSection(item.toLowerCase().replace(" ", "-"))
                 }
                 className={`cursor-pointer font-medium hover:opacity-70 transition-opacity ${
-                  isPrivacyPage || isScrolled ? "text-gray-700" : "text-white"
+                  !isHomePage || isScrolled ? "text-gray-700" : "text-white"
                 }`}
               >
                 {item}
@@ -81,9 +80,9 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
-            <X className={isPrivacyPage || isScrolled ? "text-gray-700" : "text-white"} />
+            <X className={!isHomePage || isScrolled ? "text-gray-700" : "text-white"} />
           ) : (
-            <Menu className={isPrivacyPage || isScrolled ? "text-gray-700" : "text-white"} />
+            <Menu className={!isHomePage || isScrolled ? "text-gray-700" : "text-white"} />
           )}
         </button>
       </div>
