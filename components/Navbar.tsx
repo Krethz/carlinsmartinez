@@ -69,7 +69,7 @@ export default function Navbar() {
           <Button
             onClick={() => scrollToSection("contacto")}
             className="rounded-full px-6"
-            style={{ backgroundColor: "#E8B86D" }}
+            style={{ backgroundColor: "#E8DCC8", color: "#596856" }}
           >
             Agendar Cita
           </Button>

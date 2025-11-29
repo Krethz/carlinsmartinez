@@ -1,18 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Heart, Users } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 export default function About() {
-  const stats = [
-    { icon: Users, value: "500+", label: "Clientes Satisfechos" },
-    { icon: Award, value: "10+", label: "Años de Experiencia" },
-    { icon: Heart, value: "95%", label: "Éxito en Resultados" }
+  const formacion = [
+    "Grado en Ciencia y Tenología de los Alimentos (Universidad de Barcelona)",
+    "Grado en Nutrición Humana y Dietética (Universidad de Vic)",
+    "Health Coach (Institute For Integrative Nutrition, NY)",
+    "Formación en nutrición y suplementación deportiva (CEAN)",
+    "Acreditación ISAK I y II en Antropometría",
+    "Curso en Análisis de Datos Antropométricos – G-SE (Francis Holway)",
+    "Curso de experto en Trastornos de la Conducta Alimentaria (Norte Salud- Griselda Herrero)"
   ];
 
   return (
     <section id="sobre-mí" className="py-24 px-6" style={{ backgroundColor: 'var(--light-bg)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -23,8 +27,8 @@ export default function About() {
               <div className="absolute -top-6 -left-6 w-full h-full rounded-3xl opacity-20"
                    style={{ backgroundColor: 'var(--accent-gold)' }} />
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=700&fit=crop"
-                alt="Nutricionista"
+                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&h=700&fit=crop"
+                alt="Carla Martínez - Dietista Nutricionista"
                 className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover"
               />
             </div>
@@ -36,33 +40,43 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: 'var(--primary-green)' }}>
-              Sobre Mí
-            </h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Soy Carla Martínez, nutricionista certificada con más de 10 años de experiencia ayudando a personas a transformar sus vidas a través de la alimentación consciente y balanceada.
+            <h1 className="text-4xl md:text-5xl font-bold mb-3" style={{ color: 'var(--primary-green)' }}>
+              Carla Martínez
+            </h1>
+            <p className="text-lg mb-2" style={{ color: 'var(--primary-green)', fontStyle: 'italic' }}>
+              Tecnóloga Alimentaria
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Mi enfoque se basa en crear planes personalizados que no solo te ayuden a alcanzar tus objetivos, sino que también sean sostenibles y se adapten perfectamente a tu estilo de vida.
+            <p className="text-base text-gray-600 mb-8">
+              Dietista Nutricionista col.CAT002241
+            </p>
+            
+            <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
+              Soy Carla Martínez, Dietista-Nutricionista especializada en nutrición vegetariana a lo largo de las distintas etapas del ciclo vital y en nutrición deportiva. Atiendo de forma presencial en Sant Quirze del Vallès y también ofrezco consultas online, para que cuidarte sea posible estés donde estés.
+            </p>
+            
+            <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
+              Mi propósito es acompañarte en el camino hacia una mejor salud, más vitalidad y un mayor rendimiento, ya sea en tu día a día o en tu rendimiento deportivo, siempre desde un enfoque cercano, adaptado a ti, flexible y libre de juicios.
+            </p>
+            
+            <p className="text-base text-gray-700 mb-8 leading-relaxed text-justify">
+              Trabajo basándome en la evidencia científica, lejos de dietas milagro y restricciones innecesarias. Defiendo una nutrición práctica, realista y sostenible, que se ajuste a tu estilo de vida y te permita avanzar de manera segura y consciente.
             </p>
 
-            <div className="grid grid-cols-3 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <stat.icon className="w-8 h-8 mx-auto mb-2" style={{ color: 'var(--accent-gold)' }} />
-                  <div className="text-2xl font-bold mb-1" style={{ color: 'var(--primary-green)' }}>
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
+            <div className="mt-8">
+              <div className="flex items-center gap-2 mb-4">
+                <GraduationCap className="w-6 h-6" style={{ color: 'var(--primary-green)' }} />
+                <h3 className="text-2xl font-bold" style={{ color: 'var(--primary-green)' }}>
+                  FORMACIÓN:
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {formacion.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                    <span className="text-primary-green mt-1">•</span>
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>

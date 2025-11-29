@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Calendar } from "lucide-react";
+import { Mail, Phone, Send, Calendar, Instagram } from "lucide-react";
 import Modal from "@/components/ui/modal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,9 +34,9 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Phone, text: "+34 123 456 789" },
-    { icon: Mail, text: "carlinsmartinez@gmail.com" },
-    { icon: MapPin, text: "Barcelona, España" },
+    { icon: Phone, text: "+34 636 019 161", link: "tel:+34636019161" },
+    { icon: Mail, text: "carla.martinez@codinucat.cat", link: "mailto:carla.martinez@codinucat.cat" },
+    { icon: Instagram, text: "@carlinsmartinez", link: "https://instagram.com/carlinsmartinez" },
   ];
 
   return (
@@ -160,10 +160,10 @@ export default function Contact() {
                         terceros, salvo obligación legal. Derechos: puedes
                         acceder, rectificar y suprimir tus datos escribiendo a{" "}
                         <a
-                          href="mailto:carlinsmartinez@gmail.com"
+                          href="mailto:carla.martinez@codinucat.cat"
                           className="text-[var(--primary-green)] underline"
                         >
-                          carlinsmartinez@gmail.com
+                          carla.martinez@codinucat.cat
                         </a>
                         .
                       </p>
@@ -210,14 +210,25 @@ export default function Contact() {
                     <div key={index} className="flex items-center gap-4">
                       <div
                         className="w-12 h-12 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "var(--accent-gold)" + "20" }}
+                        style={{ backgroundColor: "var(--primary-green)" + "20" }}
                       >
                         <info.icon
                           className="w-5 h-5"
-                          style={{ color: "var(--accent-gold)" }}
+                          style={{ color: "var(--primary-green)" }}
                         />
                       </div>
-                      <span className="text-gray-700 text-lg">{info.text}</span>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          target={info.icon === Instagram ? "_blank" : undefined}
+                          rel={info.icon === Instagram ? "noopener noreferrer" : undefined}
+                          className="text-gray-700 text-lg hover:text-[var(--primary-green)] transition-colors"
+                        >
+                          {info.text}
+                        </a>
+                      ) : (
+                        <span className="text-gray-700 text-lg">{info.text}</span>
+                      )}
                     </div>
                   ))}
                 </div>

@@ -127,11 +127,13 @@
 
 /* 🎨 Variables globales */
 :root {
-  --primary-green: #2d5f3f;
-  --secondary-green: #4a7c59;
-  --accent-gold: #e8b86d;
-  --light-bg: #f8faf5;
+  --primary-green: #596856;
+  --secondary-green: #6b7968;
+  --accent-gold: #E8DCC8;
+  --light-bg: #ffffff;
   --dark-text: #1a1a1a;
+  --sidebar-green: #596856;
+  --logo-beige: #E8DCC8;
 }
 
 /* 🌙 Modo oscuro opcional */
