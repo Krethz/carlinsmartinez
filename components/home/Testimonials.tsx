@@ -1,12 +1,11 @@
-"use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   // 🔄 EDITA ESTAS RESEÑAS CON LAS REALES DE GOOGLE
   const reviews = [
@@ -71,6 +70,17 @@ export default function Testimonials() {
       date: "Hace 3 semanas"
     }
   ];
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % reviews.length);
+      }, 4000);
+
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, reviews.length]);
 
   const nextReview = () => {
     setCurrentIndex((prev) => (prev + 1) % reviews.length);
@@ -139,7 +149,13 @@ export default function Testimonials() {
                   transition={{ duration: 0.3 }}
                   className="w-full max-w-2xl mx-auto"
                 >
-                  <Card className="border-none shadow-xl">
+                  <Card
+                    className="border-none shadow-xl"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onTouchStart={() => setIsPaused(true)}
+                    onTouchEnd={() => setIsPaused(false)}
+                  >
                     <CardContent className="p-6 md:p-10">
                       {/* Stars */}
                       <div className="flex gap-1 mb-6 justify-center">
