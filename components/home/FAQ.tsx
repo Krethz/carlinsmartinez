@@ -95,7 +95,7 @@ export default function FAQ() {
             <img
               src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=600&h=400&fit=crop"
               alt="Consulta online"
-              className="rounded-lg w-full max-w-lg mx-auto object-cover shadow-xl"
+              className="rounded-lg w-full max-w-md mx-auto h-64 object-cover shadow-xl"
             />
           </motion.div>
 

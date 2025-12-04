@@ -102,11 +102,8 @@ export default function Testimonials() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "var(--primary-green)" }}
           >
-            Lo Que Dicen Mis Clientes
+            Lo que opinan de mí
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Opiniones reales de Google Business
-          </p>
         </motion.div>
 
         <div className="relative">
@@ -185,8 +182,8 @@ export default function Testimonials() {
                 key={index}
                 onClick={() => goToReview(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                    ? "w-8"
-                    : "hover:opacity-75"
+                  ? "w-8"
+                  : "hover:opacity-75"
                   }`}
                 style={{
                   backgroundColor:

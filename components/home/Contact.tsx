@@ -54,7 +54,7 @@ export default function Contact() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
               style={{ color: "var(--primary-green)" }}
             >
-              Agenda Tu Consulta
+              Agenda tu consulta
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Da el primer paso hacia una vida más saludable. Estoy aquí para

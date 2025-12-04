@@ -206,7 +206,7 @@ export default function Services() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
               style={{ color: "var(--primary-green)" }}
             >
-              Servicios y Tarifas
+              Servicios y tarifas
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Consultas nutricionales personalizadas para cada objetivo
