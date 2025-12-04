@@ -44,10 +44,10 @@ export default function About() {
               Carla Martínez
             </h1>
             <p className="text-lg mb-2" style={{ color: 'var(--primary-green)', fontStyle: 'italic' }}>
-              Tecnóloga Alimentaria
+              Dietista Nutricionista col.CAT002241
             </p>
             <p className="text-base text-gray-600 mb-8">
-              Dietista Nutricionista col.CAT002241
+              Tecnóloga Alimentaria
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
