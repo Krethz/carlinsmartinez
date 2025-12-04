@@ -41,7 +41,7 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contacto" className="py-24 px-6 bg-white">
+      <section id="contacto" className="py-16 md:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -51,7 +51,7 @@ export default function Contact() {
             className="text-center mb-16"
           >
             <h2
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
               style={{ color: "var(--primary-green)" }}
             >
               Agenda Tu Consulta
@@ -73,7 +73,7 @@ export default function Contact() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}

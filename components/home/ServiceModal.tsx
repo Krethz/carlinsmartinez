@@ -54,11 +54,11 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 40 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-hidden pointer-events-auto"
+                            className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
                         >
                             {/* Header with gradient */}
                             <div
-                                className="relative p-8 text-white"
+                                className="relative p-4 sm:p-8 text-white"
                                 style={{
                                     background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
                                 }}
@@ -75,13 +75,13 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                         <service.icon size={32} className="text-white" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl md:text-3xl font-bold">{service.title}</h2>
+                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{service.title}</h2>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Content */}
-                            <div className="p-8 overflow-y-auto max-h-[calc(85vh-180px)]">
+                            <div className="p-3 sm:p-8 overflow-y-auto max-h-[calc(90vh-140px)] sm:max-h-[calc(85vh-180px)]">
                                 {/* Description */}
                                 <p className="text-gray-700 mb-4 leading-relaxed">
                                     {service.description}
@@ -95,24 +95,24 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
 
                                 {/* Pricing Table */}
                                 <div className="mb-8">
-                                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--primary-green)" }}>
+                                    <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4" style={{ color: "var(--primary-green)" }}>
                                         💰 Tarifas
                                     </h3>
-                                    <div className="bg-gray-50 rounded-2xl overflow-hidden">
+                                    <div className="bg-gray-50 rounded-2xl overflow-x-auto overflow-y-visible">
                                         {service.pricing.map((price, idx) => (
                                             <div
                                                 key={idx}
-                                                className={`flex justify-between items-center p-4 ${idx < service.pricing.length - 1 ? "border-b border-gray-200" : ""
+                                                className={`flex justify-between items-center gap-2 p-3 sm:p-4 min-w-[280px] ${idx < service.pricing.length - 1 ? "border-b border-gray-200" : ""
                                                     }`}
                                             >
-                                                <div>
-                                                    <span className="font-medium">{price.item}</span>
+                                                <div className="flex-1 min-w-0">
+                                                    <span className="font-medium text-sm sm:text-base">{price.item}</span>
                                                     {price.detail && (
-                                                        <span className="text-sm text-gray-500 block">{price.detail}</span>
+                                                        <span className="text-xs sm:text-sm text-gray-500 block">{price.detail}</span>
                                                     )}
                                                 </div>
                                                 <span
-                                                    className="text-xl font-bold"
+                                                    className="text-lg sm:text-xl font-bold whitespace-nowrap"
                                                     style={{ color: "var(--primary-green)" }}
                                                 >
                                                     {price.price}
@@ -124,7 +124,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
 
                                 {/* What's included */}
                                 <div className="mb-6">
-                                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--primary-green)" }}>
+                                    <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4" style={{ color: "var(--primary-green)" }}>
                                         {service.subtitle || "✨ ¿Qué incluye?"}
                                     </h3>
                                     <ul className="space-y-3">
@@ -158,13 +158,13 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                     </div>
                                 )}
                                 {service.images && (
-                                    <div className="mt-6 grid grid-cols-3 gap-3">
+                                    <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                                         {service.images.map((img, idx) => (
                                             <img
                                                 key={idx}
                                                 src={img}
                                                 alt={`${service.title} ${idx + 1}`}
-                                                className="rounded-xl w-full h-24 object-cover"
+                                                className="rounded-xl w-full h-20 sm:h-24 object-cover"
                                             />
                                         ))}
                                     </div>

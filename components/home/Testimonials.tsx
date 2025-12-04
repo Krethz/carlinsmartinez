@@ -28,7 +28,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonios"
-      className="py-24 px-6"
+      className="py-16 md:py-24 px-4 sm:px-6"
       style={{ backgroundColor: "var(--light-bg)" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -40,7 +40,7 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "var(--primary-green)" }}
           >
             Lo Que Dicen Mis Clientes

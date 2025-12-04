@@ -16,16 +16,16 @@ export default function Hero() {
       }}
     >
       {/* Decorative circles */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-white opacity-5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-0 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-white opacity-5 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 sm:bottom-20 right-0 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-white opacity-5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Transforma Tu Vida
             <br />
             <span style={{ color: "var(--accent-gold)" }}>Con Nutrición</span>
@@ -36,7 +36,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light"
+          className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto font-light"
         >
           Planes personalizados que se adaptan a tu estilo de vida para alcanzar
           tus objetivos de salud y bienestar

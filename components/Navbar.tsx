@@ -20,7 +20,7 @@ export default function Navbar() {
 
   const scrollToSection = (id: string) => {
     setIsMenuOpen(false);
-    
+
     if (!isHomePage) {
       // If not on home page, navigate to home with hash
       router.push(`/#${id}`);
@@ -35,14 +35,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        !isHomePage || isScrolled ? "bg-white shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${!isHomePage || isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <button
           onClick={() => isHomePage ? scrollToSection("hero") : router.push("/")}
-          className="text-2xl font-bold tracking-tight"
+          className="text-xl sm:text-2xl font-bold tracking-tight"
           style={{ color: !isHomePage || isScrolled ? "#2D5F3F" : "white" }}
         >
           Carla Martínez
@@ -57,9 +56,8 @@ export default function Navbar() {
                 onClick={() =>
                   scrollToSection(item.toLowerCase().replace(" ", "-"))
                 }
-                className={`cursor-pointer font-medium hover:opacity-70 transition-opacity ${
-                  !isHomePage || isScrolled ? "text-gray-700" : "text-white"
-                }`}
+                className={`cursor-pointer font-medium hover:opacity-70 transition-opacity ${!isHomePage || isScrolled ? "text-gray-700" : "text-white"
+                  }`}
               >
                 {item}
               </button>
@@ -89,7 +87,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden mt-4 pb-4 space-y-3 max-w-7xl mx-auto px-6">
+        <div className="md:hidden bg-white shadow-lg py-4 space-y-1 border-t border-gray-100">
           {["Inicio", "Sobre Mí", "Servicios", "Testimonios", "Contacto"].map(
             (item) => (
               <button
@@ -97,7 +95,7 @@ export default function Navbar() {
                 onClick={() =>
                   scrollToSection(item.toLowerCase().replace(" ", "-"))
                 }
-                className="block w-full text-left py-2 text-gray-700 hover:text-green-600 transition-colors"
+                className="block w-full text-left px-6 py-3 text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
               >
                 {item}
               </button>

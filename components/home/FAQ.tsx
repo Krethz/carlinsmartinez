@@ -39,7 +39,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-24 px-6" style={{ backgroundColor: 'var(--light-bg)' }}>
+    <section className="py-16 md:py-24 px-4 sm:px-6" style={{ backgroundColor: 'var(--light-bg)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Online Consultation Process */}
         <motion.div
@@ -48,10 +48,10 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center" style={{ color: 'var(--primary-green)' }}>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 text-center" style={{ color: 'var(--primary-green)' }}>
             ¿Cómo funciona la Consulta online?
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {onlineProcess.map((item, index) => (
               <motion.div
@@ -64,7 +64,7 @@ export default function FAQ() {
                 <Card className="h-full border-none shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4 mb-4">
-                      <div 
+                      <div
                         className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: 'var(--primary-green)' }}
                       >
@@ -92,7 +92,7 @@ export default function FAQ() {
             viewport={{ once: true }}
             className="mt-8 text-center"
           >
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=600&h=400&fit=crop"
               alt="Consulta online"
               className="rounded-lg w-full max-w-lg mx-auto object-cover shadow-xl"

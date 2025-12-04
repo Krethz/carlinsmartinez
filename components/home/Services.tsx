@@ -193,7 +193,7 @@ export default function Services() {
 
   return (
     <>
-      <section id="servicios" className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
+      <section id="servicios" className="py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -203,7 +203,7 @@ export default function Services() {
             className="text-center mb-16"
           >
             <h2
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
               style={{ color: "var(--primary-green)" }}
             >
               Servicios y Tarifas

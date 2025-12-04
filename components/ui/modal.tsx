@@ -50,12 +50,12 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
           />
 
           {/* Modal Container */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-none">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[90vh] overflow-hidden pointer-events-auto flex flex-col"
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[95vh] sm:h-[90vh] overflow-hidden pointer-events-auto flex flex-col"
             >
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
