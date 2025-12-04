@@ -49,7 +49,11 @@ export default function Services() {
         "Ajustes mensuales según evolución y feedback"
       ],
       startingPrice: "80€",
-      image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&h=300&fit=crop"
+      images: [
+        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&auto=format&fit=crop"
+      ]
     },
     {
       id: 2,
@@ -99,7 +103,11 @@ export default function Services() {
       ],
       footer: "Con un enfoque realista, personalizado y sin restricciones innecesarias. Te acompañaré con cercanía y evidencia científica para que vivas esta etapa con tranquilidad y confianza.",
       startingPrice: "80€",
-      images: ["/images/embaras1.jpg"]
+      images: [
+        "/images/embaras1.jpg",
+        "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1521999693109-d9001e71e72a?w=500&auto=format&fit=crop"
+      ]
     },
     {
       id: 4,
@@ -122,8 +130,9 @@ export default function Services() {
       footer: "Con una visión práctica, respetuosa y basada en evidencia científica, trabajaremos un plan nutricional que se ajuste a tus valores, estilo de vida y objetivos.",
       startingPrice: "80€",
       images: [
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop"
+        "/images/pure.jpg",
+        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop",
+        "/images/tostadas.jpg"
       ]
     },
     {
@@ -145,7 +154,12 @@ export default function Services() {
         "Consejos prácticos para organizar las comidas y crear hábitos saludables desde el inicio"
       ],
       footer: "Una consulta pensada para acompañarte sin juicios, con información actualizada y adaptada a tu realidad. Trabajaremos con calma, con evidencia y con respeto por los ritmos del bebé y de la familia.",
-      startingPrice: "80€"
+      startingPrice: "80€",
+      images: [
+        "https://images.unsplash.com/photo-1595348020949-87cdfbb44174?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=500&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?w=500&auto=format&fit=crop"
+      ]
     },
     {
       id: 6,
@@ -169,7 +183,8 @@ export default function Services() {
       startingPrice: "70€",
       images: [
         "/images/pure.jpg",
-        "/images/tostadas.jpg"
+        "/images/tostadas.jpg",
+        "https://images.unsplash.com/photo-1620005322693-012a87a071d7?w=500&auto=format&fit=crop"
       ]
     },
     {
