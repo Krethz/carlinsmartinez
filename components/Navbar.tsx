@@ -38,7 +38,7 @@ export default function Navbar() {
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${!isHomePage || isScrolled ? "bg-white shadow-lg" : "bg-transparent"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         <button
           onClick={() => isHomePage ? scrollToSection("hero") : router.push("/")}
           className="text-xl sm:text-2xl font-bold tracking-tight"
@@ -74,13 +74,20 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden p-1 flex-shrink-0"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? (
-            <X className={!isHomePage || isScrolled ? "text-gray-700" : "text-white"} />
+            <X
+              size={24}
+              className={!isHomePage || isScrolled ? "text-gray-700" : "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"}
+            />
           ) : (
-            <Menu className={!isHomePage || isScrolled ? "text-gray-700" : "text-white"} />
+            <Menu
+              size={24}
+              className={!isHomePage || isScrolled ? "text-gray-700" : "text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"}
+            />
           )}
         </button>
       </div>

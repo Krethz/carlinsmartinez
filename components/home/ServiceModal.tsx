@@ -48,17 +48,17 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                     />
 
                     {/* Modal */}
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 pointer-events-none">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 40 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 40 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
+                            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-[90vw] sm:max-w-3xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
                         >
                             {/* Header with gradient */}
                             <div
-                                className="relative p-4 sm:p-8 text-white"
+                                className="relative p-3 sm:p-8 text-white"
                                 style={{
                                     background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
                                 }}
