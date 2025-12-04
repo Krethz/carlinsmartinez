@@ -116,6 +116,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -137,18 +138,6 @@
   --logo-beige: #fbbf24;
   --gradient-start: #059669;
   --gradient-end: #10b981;
-}
-
-/* 🌙 Modo oscuro opcional */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-green: #22c55e;
-    --secondary-green: #4ade80;
-    --accent-coral: #fb923c;
-    --accent-gold: #fcd34d;
-    --light-bg: #0f172a;
-    --dark-text: #f8fafc;
-  }
 }
 
 /* ✅ Estilos base globales */
