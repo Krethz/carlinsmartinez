@@ -241,22 +241,6 @@ export default function Contact() {
                   className="w-full h-64 object-cover"
                 />
               </div>
-
-              <Card
-                className="border-none"
-                style={{ backgroundColor: "var(--light-bg)" }}
-              >
-                <CardContent className="p-6">
-                  <h4
-                    className="font-bold mb-2"
-                    style={{ color: "var(--primary-green)" }}
-                  >
-                    Horario de Atención
-                  </h4>
-                  <p className="text-gray-600">Lunes a Viernes: 9:00 - 20:00</p>
-                  <p className="text-gray-600">Sábados: 9:00 - 14:00</p>
-                </CardContent>
-              </Card>
             </motion.div>
           </div>
         </div>

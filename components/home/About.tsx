@@ -23,13 +23,11 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full rounded-3xl opacity-20"
-                style={{ backgroundColor: 'var(--accent-gold)' }} />
+            <div className="relative w-full">
               <img
                 src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&h=700&fit=crop"
                 alt="Carla Martínez - Dietista Nutricionista"
-                className="relative rounded-3xl shadow-2xl w-full h-[350px] sm:h-[450px] md:h-[500px] object-cover"
+                className="w-full h-[350px] sm:h-[450px] md:h-[500px] object-cover shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
             </div>
           </motion.div>
