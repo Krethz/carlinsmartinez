@@ -54,7 +54,8 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 40 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-[90vw] sm:max-w-3xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
+                            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
+                            style={{ width: "90vw", maxWidth: "850px" }}
                         >
                             {/* Header with gradient */}
                             <div

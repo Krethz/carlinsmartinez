@@ -99,7 +99,7 @@ export default function Services() {
       ],
       footer: "Con un enfoque realista, personalizado y sin restricciones innecesarias. Te acompañaré con cercanía y evidencia científica para que vivas esta etapa con tranquilidad y confianza.",
       startingPrice: "80€",
-      image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&h=300&fit=crop"
+      images: ["/images/embaras1.jpg"]
     },
     {
       id: 4,
@@ -189,7 +189,7 @@ export default function Services() {
       startingPrice: "50€",
       images: [
         "/images/antrop2.jpg",
-        "/images/antrop3.jpg",
+        "/images/nutridep1.jpg",
         "/images/antrop5.jpg"
       ]
     }
