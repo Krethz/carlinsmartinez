@@ -25,9 +25,9 @@ export default function About() {
           >
             <div className="relative w-full">
               <img
-                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&h=700&fit=crop"
+                src="/images/fotoperfil.jpg"
                 alt="Carla Martínez - Dietista Nutricionista"
-                className="w-full h-[350px] sm:h-[450px] md:h-[500px] object-cover shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="w-full h-[350px] sm:h-[450px] md:h-[500px] object-cover object-top shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
             </div>
           </motion.div>
