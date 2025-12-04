@@ -73,10 +73,10 @@ export default function Contact() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
@@ -192,8 +192,8 @@ export default function Contact() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="space-y-8"
@@ -268,10 +268,10 @@ export default function Contact() {
         onClose={() => setIsModalOpen(false)}
         title="Reserva tu Cita"
       >
-        <div className="w-full h-full">
+        <div className="w-full h-full max-w-full">
           <iframe
             src="https://calendar.app.google/ymAuJv4RihCrYTqG8"
-            style={{ border: 0 }}
+            style={{ border: 0, maxWidth: '100%' }}
             width="100%"
             height="100%"
             frameBorder="0"

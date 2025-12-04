@@ -70,13 +70,11 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                     <X className="w-6 h-6" />
                                 </button>
 
-                                <div className="flex items-center gap-4">
+                                <div className="flex flex-col items-center gap-3 text-center">
                                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
                                         <service.icon size={32} className="text-white" />
                                     </div>
-                                    <div>
-                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{service.title}</h2>
-                                    </div>
+                                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{service.title}</h2>
                                 </div>
                             </div>
 
