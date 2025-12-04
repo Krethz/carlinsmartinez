@@ -154,7 +154,7 @@ export default function Testimonials() {
 
                       {/* Review Text */}
                       <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6 text-center italic">
-                        "{reviews[currentIndex].text}"
+                        &ldquo;{reviews[currentIndex].text}&rdquo;
                       </p>
 
                       {/* Author */}

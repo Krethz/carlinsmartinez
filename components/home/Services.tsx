@@ -167,7 +167,10 @@ export default function Services() {
         "Acompañamiento y seguimiento: juntos iremos valorando tus progresos y ajustando el plan según tu evolución."
       ],
       startingPrice: "70€",
-      image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500&h=300&fit=crop"
+      images: [
+        "/images/pure.jpg",
+        "/images/tostadas.jpg"
+      ]
     },
     {
       id: 7,
@@ -185,8 +188,9 @@ export default function Services() {
       ],
       startingPrice: "50€",
       images: [
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300&h=300&fit=crop"
+        "/images/antrop2.jpg",
+        "/images/antrop3.jpg",
+        "/images/antrop5.jpg"
       ]
     }
   ];

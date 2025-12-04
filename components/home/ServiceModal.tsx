@@ -156,15 +156,17 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                     </div>
                                 )}
                                 {service.images && (
-                                    <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
-                                        {service.images.map((img, idx) => (
-                                            <img
-                                                key={idx}
-                                                src={img}
-                                                alt={`${service.title} ${idx + 1}`}
-                                                className="rounded-xl w-full h-20 sm:h-24 object-cover"
-                                            />
-                                        ))}
+                                    <div className="mt-6 flex justify-center">
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 justify-items-center">
+                                            {service.images.map((img, idx) => (
+                                                <img
+                                                    key={idx}
+                                                    src={img}
+                                                    alt={`${service.title} ${idx + 1}`}
+                                                    className="rounded-xl w-[300px] h-[300px] object-cover object-center shadow-md hover:shadow-lg transition-shadow"
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 )}
 
@@ -187,7 +189,8 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                         </motion.div>
                     </div>
                 </>
-            )}
-        </AnimatePresence>
+            )
+            }
+        </AnimatePresence >
     );
 }
