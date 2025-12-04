@@ -12,7 +12,7 @@ export default function Hero() {
       id="inicio"
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #2D5F3F 0%, #4A7C59 100%)",
+        background: "linear-gradient(135deg, #059669 0%, #16a34a 50%, #22c55e 100%)",
       }}
     >
       {/* Decorative circles */}

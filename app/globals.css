@@ -125,25 +125,29 @@
 @tailwind utilities;
 @tailwind utilities;
 
-/* 🎨 Variables globales */
+/* 🎨 Variables globales - Paleta Vibrante */
 :root {
-  --primary-green: #596856;
-  --secondary-green: #6b7968;
-  --accent-gold: #E8DCC8;
-  --light-bg: #ffffff;
+  --primary-green: #16a34a;
+  --secondary-green: #22c55e;
+  --accent-coral: #f97316;
+  --accent-gold: #fbbf24;
+  --light-bg: #fafafa;
   --dark-text: #1a1a1a;
-  --sidebar-green: #596856;
-  --logo-beige: #E8DCC8;
+  --sidebar-green: #16a34a;
+  --logo-beige: #fbbf24;
+  --gradient-start: #059669;
+  --gradient-end: #10b981;
 }
 
 /* 🌙 Modo oscuro opcional */
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-green: #4a7c59;
-    --secondary-green: #5c8b66;
-    --accent-gold: #ebc57c;
-    --light-bg: #f8faf5;
-    --dark-text: #f8faf5;
+    --primary-green: #22c55e;
+    --secondary-green: #4ade80;
+    --accent-coral: #fb923c;
+    --accent-gold: #fcd34d;
+    --light-bg: #0f172a;
+    --dark-text: #f8fafc;
   }
 }
 

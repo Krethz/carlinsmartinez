@@ -1,0 +1,195 @@
+"use client";
+
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+
+interface PricingItem {
+    item: string;
+    detail: string;
+    price: string;
+}
+
+interface Service {
+    id: number;
+    icon: LucideIcon;
+    title: string;
+    description: string;
+    fullDescription?: string;
+    subtitle?: string;
+    pricing: PricingItem[];
+    includes: string[];
+    footer?: string;
+    image?: string;
+    images?: string[];
+}
+
+interface ServiceModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    service: Service | null;
+}
+
+export default function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
+    if (!service) return null;
+
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    {/* Backdrop */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={onClose}
+                        className="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm"
+                    />
+
+                    {/* Modal */}
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 40 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-hidden pointer-events-auto"
+                        >
+                            {/* Header with gradient */}
+                            <div
+                                className="relative p-8 text-white"
+                                style={{
+                                    background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
+                                }}
+                            >
+                                <button
+                                    onClick={onClose}
+                                    className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-full transition-colors"
+                                >
+                                    <X className="w-6 h-6" />
+                                </button>
+
+                                <div className="flex items-center gap-4">
+                                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                                        <service.icon size={32} className="text-white" />
+                                    </div>
+                                    <div>
+                                        <h2 className="text-2xl md:text-3xl font-bold">{service.title}</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-8 overflow-y-auto max-h-[calc(85vh-180px)]">
+                                {/* Description */}
+                                <p className="text-gray-700 mb-4 leading-relaxed">
+                                    {service.description}
+                                </p>
+
+                                {service.fullDescription && (
+                                    <p className="text-gray-700 mb-6 leading-relaxed">
+                                        {service.fullDescription}
+                                    </p>
+                                )}
+
+                                {/* Pricing Table */}
+                                <div className="mb-8">
+                                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--primary-green)" }}>
+                                        💰 Tarifas
+                                    </h3>
+                                    <div className="bg-gray-50 rounded-2xl overflow-hidden">
+                                        {service.pricing.map((price, idx) => (
+                                            <div
+                                                key={idx}
+                                                className={`flex justify-between items-center p-4 ${idx < service.pricing.length - 1 ? "border-b border-gray-200" : ""
+                                                    }`}
+                                            >
+                                                <div>
+                                                    <span className="font-medium">{price.item}</span>
+                                                    {price.detail && (
+                                                        <span className="text-sm text-gray-500 block">{price.detail}</span>
+                                                    )}
+                                                </div>
+                                                <span
+                                                    className="text-xl font-bold"
+                                                    style={{ color: "var(--primary-green)" }}
+                                                >
+                                                    {price.price}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* What's included */}
+                                <div className="mb-6">
+                                    <h3 className="text-lg font-bold mb-4" style={{ color: "var(--primary-green)" }}>
+                                        {service.subtitle || "✨ ¿Qué incluye?"}
+                                    </h3>
+                                    <ul className="space-y-3">
+                                        {service.includes.map((item, idx) => (
+                                            <li key={idx} className="flex items-start gap-3">
+                                                <span
+                                                    className="mt-1 w-2 h-2 rounded-full flex-shrink-0"
+                                                    style={{ backgroundColor: "var(--accent-coral)" }}
+                                                />
+                                                <span className="text-gray-700 leading-relaxed">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {service.footer && (
+                                    <p className="text-sm text-gray-600 italic border-l-4 pl-4 py-2"
+                                        style={{ borderColor: "var(--accent-gold)" }}>
+                                        {service.footer}
+                                    </p>
+                                )}
+
+                                {/* Images */}
+                                {service.image && (
+                                    <div className="mt-6">
+                                        <img
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="rounded-2xl w-full object-cover max-h-64"
+                                        />
+                                    </div>
+                                )}
+                                {service.images && (
+                                    <div className="mt-6 grid grid-cols-3 gap-3">
+                                        {service.images.map((img, idx) => (
+                                            <img
+                                                key={idx}
+                                                src={img}
+                                                alt={`${service.title} ${idx + 1}`}
+                                                className="rounded-xl w-full h-24 object-cover"
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* CTA Button */}
+                                <div className="mt-8 text-center">
+                                    <button
+                                        onClick={() => {
+                                            onClose();
+                                            document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+                                        }}
+                                        className="px-8 py-4 rounded-full text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
+                                        style={{
+                                            background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
+                                        }}
+                                    >
+                                        Reservar Consulta
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </>
+            )}
+        </AnimatePresence>
+    );
+}
