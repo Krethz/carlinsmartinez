@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, Mail, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -78,23 +79,25 @@ export default function Footer() {
             >
               Contacto
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-3 text-sm">
               <li>
                 <a
                   href="tel:+34636019161"
-                  className="opacity-90 hover:opacity-100 transition cursor-pointer"
+                  className="flex items-center gap-2 opacity-90 hover:opacity-100 transition cursor-pointer"
                   style={{ color: "var(--light-bg)" }}
                 >
-                  📞 +34 636 019 161
+                  <Phone className="w-4 h-4" />
+                  +34 636 019 161
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:carla.martinez@codinucat.cat"
-                  className="opacity-90 hover:opacity-100 transition cursor-pointer"
+                  className="flex items-center gap-2 opacity-90 hover:opacity-100 transition cursor-pointer"
                   style={{ color: "var(--light-bg)" }}
                 >
-                  ✉️ carla.martinez@codinucat.cat
+                  <Mail className="w-4 h-4" />
+                  carla.martinez@codinucat.cat
                 </a>
               </li>
               <li>
@@ -102,10 +105,11 @@ export default function Footer() {
                   href="https://instagram.com/carlinsmartinez"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="opacity-90 hover:opacity-100 transition cursor-pointer"
+                  className="flex items-center gap-2 opacity-90 hover:opacity-100 transition cursor-pointer"
                   style={{ color: "var(--light-bg)" }}
                 >
-                  📸 @carlinsmartinez
+                  <Instagram className="w-4 h-4" />
+                  @carlinsmartinez
                 </a>
               </li>
             </ul>
