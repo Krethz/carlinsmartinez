@@ -128,16 +128,16 @@
 
 /* 🎨 Variables globales - Paleta Vibrante */
 :root {
-  --primary-green: #16a34a;
-  --secondary-green: #22c55e;
-  --accent-coral: #f97316;
-  --accent-gold: #fbbf24;
-  --light-bg: #fafafa;
-  --dark-text: #1a1a1a;
-  --sidebar-green: #16a34a;
-  --logo-beige: #fbbf24;
-  --gradient-start: #059669;
-  --gradient-end: #10b981;
+  --primary-green: #566441;
+  --secondary-green: #8a9b6d;
+  --accent-coral: #c55e4b;
+  --accent-gold: #f7e0ce;
+  --light-bg: #f0eadc;
+  --dark-text: #000000;
+  --sidebar-green: #566441;
+  --logo-beige: #f7e0ce;
+  --gradient-start: #566441;
+  --gradient-end: #8a9b6d;
 }
 
 /* ✅ Estilos base globales */
