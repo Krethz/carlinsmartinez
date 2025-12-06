@@ -50,7 +50,7 @@ export default function Hero() {
         >
           <Button
             size="lg"
-            className="rounded-full px-8 py-6 text-lg font-medium"
+            className="cursor-pointer rounded-full px-8 py-6 text-lg font-medium"
             style={{
               backgroundColor: "var(--accent-gold)",
               color: "var(--primary-green)",

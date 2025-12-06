@@ -65,7 +65,7 @@ export default function Contact() {
           <div className="flex justify-center mb-12">
             <Button
               onClick={() => setIsModalOpen(true)}
-              className="h-14 px-8 text-lg rounded-full shadow-lg hover:scale-105 transition-transform"
+              className="cursor-pointer h-14 px-8 text-lg rounded-full shadow-lg hover:scale-105 transition-transform"
               style={{ backgroundColor: "var(--primary-green)" }}
             >
               <Calendar className="w-5 h-5 mr-2" />
@@ -172,7 +172,7 @@ export default function Contact() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-12 text-lg rounded-full mt-4"
+                      className="cursor-pointer w-full h-12 text-lg rounded-full mt-4"
                       style={{ backgroundColor: "var(--primary-green)" }}
                     >
                       {isSubmitting ? (

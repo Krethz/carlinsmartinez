@@ -112,7 +112,7 @@ export default function FAQ() {
             </p>
             <Button
               onClick={() => window.location.href = '/terminos-condiciones'}
-              className="rounded-full px-8 py-6"
+              className="cursor-pointer rounded-full px-8 py-6"
               style={{ backgroundColor: 'var(--primary-green)' }}
             >
               Ver Términos y Condiciones

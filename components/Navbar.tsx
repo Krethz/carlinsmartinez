@@ -41,7 +41,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         <button
           onClick={() => isHomePage ? scrollToSection("hero") : router.push("/")}
-          className="text-xl sm:text-2xl font-bold tracking-tight"
+          className="cursor-pointer text-xl sm:text-2xl font-bold tracking-tight"
           style={{ color: !isHomePage || isScrolled ? "#2D5F3F" : "white" }}
         >
           Carla Martínez
@@ -65,7 +65,7 @@ export default function Navbar() {
           )}
           <Button
             onClick={() => scrollToSection("contacto")}
-            className="rounded-full px-6"
+            className="cursor-pointer rounded-full px-6"
             style={{ backgroundColor: "#E8DCC8", color: "#596856" }}
           >
             Agendar Cita
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-1 flex-shrink-0"
+          className="cursor-pointer md:hidden p-1 flex-shrink-0"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -102,7 +102,7 @@ export default function Navbar() {
                 onClick={() =>
                   scrollToSection(item.toLowerCase().replace(" ", "-"))
                 }
-                className="block w-full text-left px-6 py-3 text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
+                className="cursor-pointer block w-full text-left px-6 py-3 text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
               >
                 {item}
               </button>

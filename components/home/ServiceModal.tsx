@@ -178,7 +178,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                             onClose();
                                             document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
                                         }}
-                                        className="px-8 py-4 rounded-full text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
+                                        className="cursor-pointer px-8 py-4 rounded-full text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
                                         style={{
                                             background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
                                         }}
