@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidad",
+  description: "Información sobre cómo tratamos tus datos personales según el RGPD y la LOPD. Dietista Nutricionista Carla Martínez en Barcelona.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function PoliticaPrivacidad() {
   return (
     <main className="pt-32 px-6 pb-24 max-w-4xl mx-auto text-gray-800 leading-relaxed">
@@ -9,7 +20,7 @@ export default function PoliticaPrivacidad() {
       </h1>
 
       <p className="mb-6 text-gray-600">
-        En conformidad con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica de Protección de Datos (LOPD), 
+        En conformidad con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica de Protección de Datos (LOPD),
         te informamos sobre cómo tratamos tus datos personales.
       </p>
 
@@ -152,7 +163,7 @@ export default function PoliticaPrivacidad() {
         8. Reclamaciones
       </h2>
       <p className="mb-4">
-        Si consideras que tus derechos no han sido atendidos correctamente, puedes presentar una reclamación ante la 
+        Si consideras que tus derechos no han sido atendidos correctamente, puedes presentar una reclamación ante la
         Agencia Española de Protección de Datos (AEPD):
       </p>
       <div className="bg-gray-50 p-4 rounded-lg mb-6">
@@ -177,8 +188,8 @@ export default function PoliticaPrivacidad() {
         9. Seguridad
       </h2>
       <p className="mb-4">
-        Hemos implementado medidas técnicas y organizativas adecuadas para garantizar la seguridad de tus datos personales 
-        y evitar su alteración, pérdida, tratamiento o acceso no autorizado, teniendo en cuenta el estado de la tecnología, 
+        Hemos implementado medidas técnicas y organizativas adecuadas para garantizar la seguridad de tus datos personales
+        y evitar su alteración, pérdida, tratamiento o acceso no autorizado, teniendo en cuenta el estado de la tecnología,
         la naturaleza de los datos y los riesgos a los que están expuestos.
       </p>
 
@@ -186,7 +197,7 @@ export default function PoliticaPrivacidad() {
         10. Cookies
       </h2>
       <p className="mb-4">
-        Este sitio web no utiliza cookies de seguimiento o análisis. Solo se utilizan cookies técnicas estrictamente 
+        Este sitio web no utiliza cookies de seguimiento o análisis. Solo se utilizan cookies técnicas estrictamente
         necesarias para el funcionamiento de la web.
       </p>
 
@@ -195,7 +206,7 @@ export default function PoliticaPrivacidad() {
           <strong>Última actualización:</strong> Noviembre 2025
         </p>
         <p className="text-sm text-gray-500 mt-2">
-          Nos reservamos el derecho de modificar esta Política de Privacidad. Los cambios serán publicados en esta página 
+          Nos reservamos el derecho de modificar esta Política de Privacidad. Los cambios serán publicados en esta página
           con antelación suficiente a su aplicación.
         </p>
       </div>

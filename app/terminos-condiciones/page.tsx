@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones",
+  description: "Política de pagos, cancelaciones y reprogramación de citas con la Dietista Nutricionista Carla Martínez en Barcelona.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function TerminosCondiciones() {
   return (
     <main className="pt-32 px-6 pb-24 max-w-4xl mx-auto text-gray-800 leading-relaxed">
@@ -87,7 +98,7 @@ export default function TerminosCondiciones() {
       </h2>
 
       <p className="mb-4">
-        Las citas pueden ser reprogramadas siempre y cuando se comunique con la antelación mínima de 24 horas. 
+        Las citas pueden ser reprogramadas siempre y cuando se comunique con la antelación mínima de 24 horas.
         Se buscará un nuevo horario disponible que se ajuste a las necesidades del cliente.
       </p>
 

@@ -1,0 +1,21 @@
+{
+    "name": "Carla Martínez Nutricionista",
+    "short_name": "Carla Martínez",
+    "description": "Dietista Nutricionista colegiada en Barcelona. Especialista en nutrición deportiva, vegetariana, embarazo y alimentación infantil.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f0eadc",
+    "theme_color": "#566441",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
