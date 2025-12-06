@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { LucideIcon } from "lucide-react";
@@ -148,11 +149,12 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
 
                                 {/* Images */}
                                 {service.image && (
-                                    <div className="mt-6">
-                                        <img
+                                    <div className="mt-6 relative w-full h-64">
+                                        <Image
                                             src={service.image}
                                             alt={service.title}
-                                            className="rounded-2xl w-full object-cover max-h-64"
+                                            fill
+                                            className="rounded-2xl object-cover"
                                         />
                                     </div>
                                 )}
@@ -160,12 +162,14 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                     <div className="mt-6 flex justify-center">
                                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 justify-items-center">
                                             {service.images.map((img, idx) => (
-                                                <img
-                                                    key={idx}
-                                                    src={img}
-                                                    alt={`${service.title} ${idx + 1}`}
-                                                    className="rounded-xl w-[300px] h-[300px] object-cover object-center shadow-md hover:shadow-lg transition-shadow"
-                                                />
+                                                <div key={idx} className="relative w-[300px] h-[300px]">
+                                                    <Image
+                                                        src={img}
+                                                        alt={`${service.title} ${idx + 1}`}
+                                                        fill
+                                                        className="rounded-xl object-cover object-center shadow-md hover:shadow-lg transition-shadow"
+                                                    />
+                                                </div>
                                             ))}
                                         </div>
                                     </div>

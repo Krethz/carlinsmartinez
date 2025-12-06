@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, Send, Calendar, Instagram } from "lucide-react";
 import Modal from "@/components/ui/modal";
@@ -234,11 +235,12 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img
+              <div className="rounded-2xl overflow-hidden shadow-xl relative h-64">
+                <Image
                   src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop"
                   alt="Alimentos saludables"
-                  className="w-full h-64 object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </motion.div>

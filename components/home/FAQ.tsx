@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, FileText, Video, CreditCard, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -92,11 +93,14 @@ export default function FAQ() {
             viewport={{ once: true }}
             className="mt-8 text-center"
           >
-            <img
-              src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=600&h=400&fit=crop"
-              alt="Consulta online"
-              className="rounded-lg w-full max-w-md mx-auto h-64 object-cover shadow-xl"
-            />
+            <div className="relative w-full max-w-md mx-auto h-64 rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=600&h=400&fit=crop"
+                alt="Consulta online"
+                fill
+                className="object-cover"
+              />
+            </div>
           </motion.div>
 
           {/* Button to payment policy */}

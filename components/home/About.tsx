@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
 
@@ -23,11 +24,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-full">
-              <img
+            <div className="relative w-full h-[350px] sm:h-[450px] md:h-[500px]">
+              <Image
                 src="/images/fotoperfil.jpg"
                 alt="Carla Martínez - Dietista Nutricionista"
-                className="w-full h-[350px] sm:h-[450px] md:h-[500px] object-cover object-top shadow-lg hover:shadow-xl transition-shadow duration-300"
+                fill
+                className="object-cover object-top shadow-lg hover:shadow-xl transition-shadow duration-300"
+                priority
               />
             </div>
           </motion.div>
