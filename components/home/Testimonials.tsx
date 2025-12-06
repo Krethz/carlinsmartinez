@@ -10,65 +10,40 @@ export default function Testimonials() {
   // 🔄 EDITA ESTAS RESEÑAS CON LAS REALES DE GOOGLE
   const reviews = [
     {
-      name: "María González",
+      name: "Sara Villaverde",
       rating: 5,
-      text: "Carla es una profesional excepcional. Me ayudó a mejorar mis hábitos alimenticios de forma realista y sostenible. He perdido 12kg y me siento mejor que nunca.",
-      date: "Hace 2 meses"
+      text: "Desde hace 1 año sigo una dieta pescetariana y Carla me ha dado opciones al tener gran conocimiento de dieta vegetariana. Además, mi objetivo era saber qué comer antes y después de hacer deporte para maximizar el rendimiento y también he notado cambios en mi cuerpo, está más tonificado. En cualquier momento puedo consultarle dudas que me resuelve sin tener que concertar una cita. La recomiendo! :)",
     },
     {
-      name: "Jordi Martínez",
+      name: "Irene Vicent",
       rating: 5,
-      text: "Como deportista necesitaba mejorar mi nutrición y rendimiento. Carla diseñó un plan perfecto que se adapta a mis entrenamientos. Los resultados han sido increíbles.",
-      date: "Hace 1 mes"
+      text: "Desde el primer día que visité a Carla estoy encantada. Me ha ayudado no sólo a mejorar mi alimentación sino también en mi rendimiento. He notado cambios muy positivos en muy poco tiempo gracias a su ayuda. Es una gran profesional, atenta a la hora de resolver cualquier duda. En cuanto a los menús, son muy variados y adaptados a tu día a día. Sin duda la recomiendo al 100% y volvería a repetir 100 veces más! No puedo estar más contenta! Gracias Carlins por tu ayuda!!!"
+    }, {
+      name: "Verónica S.",
+      rating: 5,
+      text: "Acudí a Carla para mejorar mi rendimiento en los entrenos de fuerza y mi composición corporal, y se han cumplido ambos objetivos 💪 La pauta que me mandó es súper variada, da muchas opciones y resuelve todas tus dudas sin problema y ágilmente. Se preocupa verdaderamente por tu salud y bienestar, la recomiendo sin lugar a dudas!…",
     },
     {
-      name: "Laura Fernández",
+      name: "Sergi Alloza Crespo",
       rating: 5,
-      text: "Excelente profesional y muy cercana. Me ha enseñado a comer de forma saludable sin renunciar a disfrutar de la comida. El seguimiento es constante.",
-      date: "Hace 3 semanas"
+      text: "Todo un placer trabajar con Carla. Excelente profesional y persona, cercana y atenta a los objetivos que propuse. No solo en las citas personales sino también en la distancia se procupa por el estado y el seguimiento del plan acordado. Sin duda alguna volveré siempre que necesite asesoramiento. Gracies!!"
+    }, {
+      name: "Inés López Coll",
+      rating: 5,
+      text: "Muy contenta y agradecida con Carla. Acudí a ella para llevar una dieta vegetariana saludable y me ayudó muchísimo. Siempre atenta, dedicada y amable. ¡Aprendí mucho! Gracias Carla :)",
+    }, {
+      name: "María Mercedes Pérez",
+      rating: 5,
+      text: "Super contenta con la ayuda y el acompañamiento desde el minuto uno, desde hace más de un año Carla me ha guiado con mi alimentación y mi rendimiento, adaptándose a todos los cambios que han surgido en el camino y facilitando las herramientas para aprender a escuchar mi cuerpo, entender qué es lo mejora para mi y aprender a tomar mejores decisiones en cuanto a nutrición.",
+    }, {
+      name: "Laura Cortell",
+      rating: 5,
+      text: "Carla me ha ayudado a ir alcanzando pequeños objetivos que me han hecho mejorar el rendimiento físico en CrossFit, la recuperación, alimentación y el bienestar físico en general, incluso a superar mis expectativas personales. Se nota la vocación, pasión y dedicación en su trabajo, proporciona una excelente atención con sesiones personalizadas y seguimiento que te ayudan a mantener la motivación y el foco.",
+    }, {
+      name: "Montserrat Taulé Segarra",
+      rating: 5,
+      text: "Carla es una gran profesional de la nutrición y te ayuda a conseguir tus objetivos siempre desde una perspectiva basada en la salud. Es cercana, empática y se implica mucho con sus pacientes. ¡Es un 10!",
     },
-    {
-      name: "Carlos Ruiz",
-      rating: 5,
-      text: "Muy contento con los resultados. Carla me ayudó con problemas digestivos que arrastraba desde hacía años. Su enfoque integral marca la diferencia.",
-      date: "Hace 1 semana"
-    },
-    {
-      name: "Anna Soler",
-      rating: 5,
-      text: "La mejor decisión que pude tomar. Plan vegetariano personalizado, fácil de seguir y delicioso. He mejorado mis análisis y tengo más energía que nunca.",
-      date: "Hace 2 semanas"
-    },
-    {
-      name: "David López",
-      rating: 5,
-      text: "Profesional, empática y con un conocimiento impresionante. Me ayudó a alcanzar mis objetivos de forma saludable. Las consultas son muy completas.",
-      date: "Hace 1 mes"
-    },
-    {
-      name: "Marta Sánchez",
-      rating: 5,
-      text: "Carla me ayudó a mejorar mi relación con la comida. Su enfoque no es restrictivo sino educativo. He aprendido a comer bien y los resultados hablan por sí solos.",
-      date: "Hace 3 meses"
-    },
-    {
-      name: "Pere Vidal",
-      rating: 5,
-      text: "Recomendable al 100%. Plan adaptado a mis necesidades y horarios. Carla es muy profesional y el trato es cercano. Los cambios se notan.",
-      date: "Hace 2 semanas"
-    },
-    {
-      name: "Cristina Morales",
-      rating: 5,
-      text: "Excelente dietista-nutricionista. Me ha ayudado con la nutrición deportiva y los resultados son evidentes. Muy profesional, atenta y con un seguimiento impecable.",
-      date: "Hace 1 mes"
-    },
-    {
-      name: "Marc Torres",
-      rating: 5,
-      text: "La mejor nutricionista con la que he trabajado. Planes personalizados, fáciles de seguir y efectivos. Su conocimiento en antropometría es brutal.",
-      date: "Hace 3 semanas"
-    }
   ];
 
   // Auto-play functionality
@@ -181,9 +156,7 @@ export default function Testimonials() {
                         >
                           {reviews[currentIndex].name}
                         </div>
-                        <div className="text-sm text-gray-500">
-                          {reviews[currentIndex].date}
-                        </div>
+
                       </div>
                     </CardContent>
                   </Card>
