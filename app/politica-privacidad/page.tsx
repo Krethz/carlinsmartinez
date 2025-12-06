@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Shield, User, Target, Database, Clock, Users, Lock, AlertCircle, FileText, Cookie } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
@@ -11,204 +12,281 @@ export const metadata: Metadata = {
 
 export default function PoliticaPrivacidad() {
   return (
-    <main className="pt-32 px-6 pb-24 max-w-4xl mx-auto text-gray-800 leading-relaxed">
-      <h1
-        className="text-4xl font-bold mb-6"
-        style={{ color: "var(--primary-green)" }}
-      >
-        Política de Privacidad
-      </h1>
-
-      <p className="mb-6 text-gray-600">
-        En conformidad con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica de Protección de Datos (LOPD),
-        te informamos sobre cómo tratamos tus datos personales.
-      </p>
-
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        1. Responsable del Tratamiento
-      </h2>
-      <div className="bg-gray-50 p-4 rounded-lg mb-4">
-        <p>
-          <strong>Identidad:</strong> Carla Martínez Arribas<br />
-          <strong>Actividad:</strong> Dietista-Nutricionista (col.CAT002241)<br />
-          <strong>Email:</strong>{" "}
-          <a
-            href="mailto:carla.martinez@codinucat.cat"
-            className="underline"
+    <main className="pt-24 pb-16 px-4 sm:px-6" style={{ backgroundColor: "var(--light-bg)" }}>
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
+            style={{ backgroundColor: "var(--primary-green)" }}
+          >
+            <Shield className="w-8 h-8 text-white" />
+          </div>
+          <h1
+            className="text-3xl sm:text-4xl font-bold mb-4"
             style={{ color: "var(--primary-green)" }}
           >
-            carla.martinez@codinucat.cat
-          </a><br />
-          <strong>Teléfono:</strong>{" "}
-          <a
-            href="tel:+34636019161"
-            className="underline"
-            style={{ color: "var(--primary-green)" }}
-          >
-            +34 636 019 161
-          </a><br />
-          <strong>Ubicación:</strong> Sant Quirze del Vallès, Barcelona, España
-        </p>
-      </div>
+            Política de Privacidad
+          </h1>
+          <p className="text-gray-600">
+            Tu privacidad es importante. Aquí te explicamos cómo protegemos tus datos.
+          </p>
+        </div>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        2. Finalidad del Tratamiento
-      </h2>
-      <p className="mb-4">
-        Los datos personales que nos proporciones serán tratados con las siguientes finalidades:
-      </p>
-      <ul className="list-disc ml-6 mb-4 space-y-2">
-        <li>Gestionar las consultas y solicitudes de cita enviadas a través del formulario de contacto</li>
-        <li>Prestar servicios de asesoramiento nutricional personalizado</li>
-        <li>Realizar el seguimiento de tu evolución y progreso nutricional</li>
-        <li>Mantener comunicación relacionada con tu tratamiento nutricional</li>
-        <li>Gestión administrativa y contable de los servicios prestados</li>
-      </ul>
+        {/* Content */}
+        <div className="space-y-8">
+          {/* Section 1 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <User className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Responsable del Tratamiento
+                </h2>
+                <div className="text-gray-600 space-y-1">
+                  <p><span className="font-medium text-gray-800">Identidad:</span> Carla Martínez Arribas</p>
+                  <p><span className="font-medium text-gray-800">Actividad:</span> Dietista-Nutricionista (col.CAT002241)</p>
+                  <p><span className="font-medium text-gray-800">Email:</span>{" "}
+                    <a href="mailto:carla.martinez@codinucat.cat" className="underline" style={{ color: "var(--primary-green)" }}>
+                      carla.martinez@codinucat.cat
+                    </a>
+                  </p>
+                  <p><span className="font-medium text-gray-800">Teléfono:</span>{" "}
+                    <a href="tel:+34636019161" className="underline" style={{ color: "var(--primary-green)" }}>
+                      +34 636 019 161
+                    </a>
+                  </p>
+                  <p><span className="font-medium text-gray-800">Ubicación:</span> Sant Quirze del Vallès, Barcelona</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        3. Legitimación
-      </h2>
-      <p className="mb-4">
-        La base legal para el tratamiento de tus datos personales es:
-      </p>
-      <ul className="list-disc ml-6 mb-4 space-y-2">
-        <li><strong>Consentimiento del interesado:</strong> Al enviar el formulario de contacto o solicitar una cita, consientes expresamente el tratamiento de tus datos</li>
-        <li><strong>Ejecución de un contrato:</strong> Para la prestación de los servicios de nutrición contratados</li>
-        <li><strong>Cumplimiento de obligaciones legales:</strong> Conservación de historiales clínicos según normativa sanitaria</li>
-      </ul>
+          {/* Section 2 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Target className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Finalidad del Tratamiento
+                </h2>
+                <ul className="text-gray-600 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span style={{ color: "var(--accent-coral)" }}>•</span>
+                    Gestionar consultas y solicitudes de cita
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span style={{ color: "var(--accent-coral)" }}>•</span>
+                    Prestar servicios de asesoramiento nutricional
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span style={{ color: "var(--accent-coral)" }}>•</span>
+                    Realizar seguimiento de tu evolución
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span style={{ color: "var(--accent-coral)" }}>•</span>
+                    Mantener comunicación sobre tu tratamiento
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span style={{ color: "var(--accent-coral)" }}>•</span>
+                    Gestión administrativa y contable
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        4. Datos Recopilados
-      </h2>
-      <p className="mb-4">
-        Los datos que podemos recopilar incluyen:
-      </p>
-      <ul className="list-disc ml-6 mb-4 space-y-2">
-        <li>Datos de identificación (nombre, apellidos, DNI/NIE)</li>
-        <li>Datos de contacto (email, teléfono, dirección)</li>
-        <li>Datos de salud (historia clínica, hábitos alimentarios, alergias, intolerancias, antropometría)</li>
-        <li>Datos económicos (para facturación y cobro de servicios)</li>
-      </ul>
+          {/* Section 3 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <FileText className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Legitimación
+                </h2>
+                <ul className="text-gray-600 space-y-2">
+                  <li><span className="font-medium text-gray-800">Consentimiento:</span> Al enviar el formulario de contacto</li>
+                  <li><span className="font-medium text-gray-800">Contrato:</span> Para la prestación de servicios nutricionales</li>
+                  <li><span className="font-medium text-gray-800">Obligación legal:</span> Conservación de historiales clínicos</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        5. Conservación de Datos
-      </h2>
-      <p className="mb-4">
-        Los datos personales se conservarán:
-      </p>
-      <ul className="list-disc ml-6 mb-4 space-y-2">
-        <li><strong>Durante la relación profesional:</strong> Mientras se presten los servicios nutricionales</li>
-        <li><strong>Historiales clínicos:</strong> Mínimo 5 años desde la última asistencia (según legislación sanitaria)</li>
-        <li><strong>Datos fiscales:</strong> 6 años (según normativa tributaria)</li>
-        <li><strong>Tras finalizar la relación:</strong> Hasta que solicites su supresión, salvo obligación legal de conservación</li>
-      </ul>
+          {/* Section 4 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Database className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Datos Recopilados
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-3 text-gray-600">
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="font-medium text-gray-800 text-sm">Identificación</p>
+                    <p className="text-sm">Nombre, apellidos, DNI/NIE</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="font-medium text-gray-800 text-sm">Contacto</p>
+                    <p className="text-sm">Email, teléfono, dirección</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="font-medium text-gray-800 text-sm">Salud</p>
+                    <p className="text-sm">Historia clínica, antropometría</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="font-medium text-gray-800 text-sm">Económicos</p>
+                    <p className="text-sm">Datos de facturación</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        6. Destinatarios de los Datos
-      </h2>
-      <p className="mb-4">
-        Tus datos personales no serán cedidos a terceros, excepto:
-      </p>
-      <ul className="list-disc ml-6 mb-4 space-y-2">
-        <li>Cuando exista obligación legal (Hacienda, Seguridad Social, autoridades sanitarias)</li>
-        <li>Proveedores de servicios necesarios para la prestación del servicio (plataforma de videollamadas, almacenamiento en la nube) que actúan como encargados de tratamiento bajo estrictas condiciones de confidencialidad</li>
-        <li>Otros profesionales sanitarios, únicamente con tu consentimiento expreso y para tu beneficio terapéutico</li>
-      </ul>
+          {/* Section 5 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Clock className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Conservación de Datos
+                </h2>
+                <div className="space-y-2 text-gray-600">
+                  <p><span className="font-medium text-gray-800">Relación activa:</span> Mientras se presten los servicios</p>
+                  <p><span className="font-medium text-gray-800">Historiales clínicos:</span> Mínimo 5 años</p>
+                  <p><span className="font-medium text-gray-800">Datos fiscales:</span> 6 años</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        7. Tus Derechos
-      </h2>
-      <p className="mb-4">
-        Puedes ejercer los siguientes derechos en cualquier momento:
-      </p>
-      <ul className="list-disc ml-6 mb-4 space-y-2">
-        <li><strong>Acceso:</strong> Conocer qué datos personales tengo sobre ti</li>
-        <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
-        <li><strong>Supresión:</strong> Solicitar la eliminación de tus datos (derecho al olvido)</li>
-        <li><strong>Limitación:</strong> Solicitar que solo se conserven para el ejercicio de reclamaciones</li>
-        <li><strong>Portabilidad:</strong> Recibir tus datos en formato estructurado</li>
-        <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos</li>
-        <li><strong>Revocación del consentimiento:</strong> Retirar el consentimiento en cualquier momento</li>
-      </ul>
+          {/* Section 6 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Users className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Destinatarios
+                </h2>
+                <p className="text-gray-600 mb-2">
+                  Tus datos no se ceden a terceros, excepto:
+                </p>
+                <ul className="text-gray-600 space-y-1 text-sm">
+                  <li>• Obligación legal (Hacienda, autoridades sanitarias)</li>
+                  <li>• Proveedores de servicios necesarios</li>
+                  <li>• Otros profesionales sanitarios (con tu consentimiento)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-      <p className="mb-4">
-        Para ejercer estos derechos, puedes contactar mediante:
-      </p>
-      <div className="bg-gray-50 p-4 rounded-lg mb-6">
-        <p>
-          📧 Email:{" "}
-          <a
-            href="mailto:carla.martinez@codinucat.cat"
-            className="underline"
-            style={{ color: "var(--primary-green)" }}
-          >
-            carla.martinez@codinucat.cat
-          </a><br />
-          📱 Teléfono:{" "}
-          <a
-            href="tel:+34636019161"
-            className="underline"
-            style={{ color: "var(--primary-green)" }}
-          >
-            +34 636 019 161
-          </a>
-        </p>
-      </div>
+          {/* Section 7 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Lock className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Tus Derechos
+                </h2>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {["Acceso", "Rectificación", "Supresión", "Limitación", "Portabilidad", "Oposición"].map((right) => (
+                    <span
+                      key={right}
+                      className="px-3 py-1 rounded-full text-sm font-medium"
+                      style={{ backgroundColor: "var(--light-bg)", color: "var(--primary-green)" }}
+                    >
+                      {right}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm">
+                  Contacta a <a href="mailto:carla.martinez@codinucat.cat" className="underline" style={{ color: "var(--primary-green)" }}>carla.martinez@codinucat.cat</a> para ejercer tus derechos.
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <p className="mb-6">
-        Deberás acreditar tu identidad mediante DNI/NIE. La respuesta se proporcionará en un plazo máximo de 1 mes.
-      </p>
+          {/* Section 8 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <AlertCircle className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Reclamaciones
+                </h2>
+                <p className="text-gray-600 text-sm">
+                  Puedes presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: "var(--primary-green)" }}>Agencia Española de Protección de Datos</a> (C/ Jorge Juan, 6 - 28001 Madrid).
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        8. Reclamaciones
-      </h2>
-      <p className="mb-4">
-        Si consideras que tus derechos no han sido atendidos correctamente, puedes presentar una reclamación ante la
-        Agencia Española de Protección de Datos (AEPD):
-      </p>
-      <div className="bg-gray-50 p-4 rounded-lg mb-6">
-        <p>
-          <strong>Agencia Española de Protección de Datos</strong><br />
-          C/ Jorge Juan, 6<br />
-          28001 – Madrid<br />
-          Web:{" "}
-          <a
-            href="https://www.aepd.es"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-            style={{ color: "var(--primary-green)" }}
-          >
-            www.aepd.es
-          </a>
-        </p>
-      </div>
+          {/* Section 9 */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Cookie className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Cookies
+                </h2>
+                <p className="text-gray-600 text-sm">
+                  Este sitio web solo utiliza cookies técnicas estrictamente necesarias. No utilizamos cookies de seguimiento o análisis.
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        9. Seguridad
-      </h2>
-      <p className="mb-4">
-        Hemos implementado medidas técnicas y organizativas adecuadas para garantizar la seguridad de tus datos personales
-        y evitar su alteración, pérdida, tratamiento o acceso no autorizado, teniendo en cuenta el estado de la tecnología,
-        la naturaleza de los datos y los riesgos a los que están expuestos.
-      </p>
+        </div>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3" style={{ color: "var(--primary-green)" }}>
-        10. Cookies
-      </h2>
-      <p className="mb-4">
-        Este sitio web no utiliza cookies de seguimiento o análisis. Solo se utilizan cookies técnicas estrictamente
-        necesarias para el funcionamiento de la web.
-      </p>
-
-      <div className="mt-12 pt-6 border-t border-gray-300">
-        <p className="text-sm text-gray-500">
-          <strong>Última actualización:</strong> Noviembre 2025
-        </p>
-        <p className="text-sm text-gray-500 mt-2">
-          Nos reservamos el derecho de modificar esta Política de Privacidad. Los cambios serán publicados en esta página
-          con antelación suficiente a su aplicación.
-        </p>
+        {/* Footer */}
+        <div className="mt-12 text-center text-sm text-gray-500">
+          <p>Última actualización: Noviembre 2025</p>
+        </div>
       </div>
     </main>
   );

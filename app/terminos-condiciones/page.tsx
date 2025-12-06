@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FileText, CreditCard, Building2, XCircle, Calendar, Phone, Mail, Instagram } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
@@ -11,143 +12,207 @@ export const metadata: Metadata = {
 
 export default function TerminosCondiciones() {
   return (
-    <main className="pt-32 px-6 pb-24 max-w-4xl mx-auto text-gray-800 leading-relaxed">
-      <h1
-        className="text-4xl font-bold mb-6"
-        style={{ color: "var(--primary-green)" }}
-      >
-        Términos y Condiciones
-      </h1>
-
-      <p className="mb-6 text-gray-600">
-        Al contratar cualquiera de los servicios ofrecidos, aceptas los siguientes términos y condiciones de pago y cancelación.
-      </p>
-
-      <h2 className="text-2xl font-semibold mt-8 mb-4" style={{ color: "var(--primary-green)" }}>
-        Política de Pagos
-      </h2>
-
-      <div className="bg-gray-50 p-6 rounded-lg mb-6">
-        <h3 className="font-bold mb-3">Primera Visita</h3>
-        <p className="mb-3">
-          Una vez <strong>programada la primera visita</strong>, será necesario realizar un pago anticipado del{" "}
-          <strong>50% del importe total de la sesión</strong> mediante transferencia bancaria.
-        </p>
-        <p>
-          El <strong>50% restante deberá abonarse al finalizar la primera visita</strong>.
-        </p>
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-lg mb-6">
-        <h3 className="font-bold mb-3">Seguimientos y Entregas de Pauta</h3>
-        <p>
-          El pago correspondiente a la entrega de la pauta y a las sesiones de seguimiento se efectuará{" "}
-          <strong>al término de cada una</strong>, pudiendo realizarse:
-        </p>
-        <ul className="list-disc ml-6 mt-3 space-y-2">
-          <li>En efectivo (sesiones presenciales)</li>
-          <li>Mediante transferencia bancaria (sesiones online y presenciales)</li>
-        </ul>
-      </div>
-
-      <h2 className="text-2xl font-semibold mt-10 mb-4" style={{ color: "var(--primary-green)" }}>
-        Datos Bancarios
-      </h2>
-
-      <div className="bg-green-50 border-2 border-green-200 p-8 rounded-lg mb-6">
-        <p className="text-sm text-gray-600 mb-3">Número de cuenta para transferencias:</p>
-        <p className="text-3xl font-mono font-bold text-center mb-4" style={{ color: "var(--primary-green)" }}>
-          ES44 2100 0362 1402 0077 3521
-        </p>
-        <p className="text-sm text-gray-700 text-center">
-          <strong>Importante:</strong> El importe de la reserva deberá ingresarse indicando el{" "}
-          <strong>nombre y apellidos</strong> de la persona que solicita el servicio.
-        </p>
-      </div>
-
-      <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg mb-6">
-        <p className="text-sm text-gray-700 font-semibold">
-          Nota: La reserva se considerará confirmada una vez recibido el comprobante de pago.
-        </p>
-      </div>
-
-      <h2 className="text-2xl font-semibold mt-10 mb-4" style={{ color: "var(--primary-green)" }}>
-        Política de Cancelación
-      </h2>
-
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
-        <h3 className="font-bold mb-3">
-          Cancelación con Antelación
-        </h3>
-        <p className="mb-3">
-          En caso de no poder asistir a la visita agendada, <strong>deberá comunicarse la cancelación o cambio con un mínimo de 24 horas de antelación</strong>, con el fin de poder reprogramar la sesión en otro día y horario disponibles.
-        </p>
-      </div>
-
-      <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
-        <h3 className="font-bold mb-3">
-          Cancelación Tardía o Inasistencia
-        </h3>
-        <p>
-          De no realizarse dicho aviso dentro del plazo establecido (24 horas), o en caso de no asistir a la cita sin previo aviso, <strong>se perderá el importe correspondiente a la reserva</strong>.
-        </p>
-      </div>
-
-      <h2 className="text-2xl font-semibold mt-10 mb-4" style={{ color: "var(--primary-green)" }}>
-        Reprogramación de Citas
-      </h2>
-
-      <p className="mb-4">
-        Las citas pueden ser reprogramadas siempre y cuando se comunique con la antelación mínima de 24 horas.
-        Se buscará un nuevo horario disponible que se ajuste a las necesidades del cliente.
-      </p>
-
-      <h2 className="text-2xl font-semibold mt-10 mb-4" style={{ color: "var(--primary-green)" }}>
-        Contacto
-      </h2>
-
-      <p className="mb-4">
-        Para cualquier consulta relacionada con pagos, cancelaciones o reprogramaciones, puedes contactar a través de:
-      </p>
-
-      <ul className="space-y-2 mb-6">
-        <li>
-          <strong>Email:</strong>{" "}
-          <a
-            href="mailto:carla.martinez@codinucat.cat"
-            className="underline"
+    <main className="pt-24 pb-16 px-4 sm:px-6" style={{ backgroundColor: "var(--light-bg)" }}>
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
+            style={{ backgroundColor: "var(--primary-green)" }}
+          >
+            <FileText className="w-8 h-8 text-white" />
+          </div>
+          <h1
+            className="text-3xl sm:text-4xl font-bold mb-4"
             style={{ color: "var(--primary-green)" }}
           >
-            carla.martinez@codinucat.cat
-          </a>
-        </li>
-        <li>
-          <strong>Teléfono:</strong>{" "}
-          <a
-            href="tel:+34636019161"
-            className="underline"
-            style={{ color: "var(--primary-green)" }}
-          >
-            +34 636 019 161
-          </a>
-        </li>
-        <li>
-          <strong>Instagram:</strong>{" "}
-          <a
-            href="https://instagram.com/carlinsmartinez"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-            style={{ color: "var(--primary-green)" }}
-          >
-            @carlinsmartinez
-          </a>
-        </li>
-      </ul>
+            Términos y Condiciones
+          </h1>
+          <p className="text-gray-600">
+            Información sobre pagos, cancelaciones y política de citas.
+          </p>
+        </div>
 
-      <p className="mt-12 text-sm text-gray-500 border-t pt-6">
-        Última actualización: Noviembre 2025
-      </p>
+        {/* Content */}
+        <div className="space-y-8">
+          {/* Primera Visita */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <CreditCard className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-semibold mb-4" style={{ color: "var(--primary-green)" }}>
+                  Política de Pagos
+                </h2>
+
+                <div className="space-y-4">
+                  <div
+                    className="rounded-xl p-4"
+                    style={{ backgroundColor: "var(--light-bg)" }}
+                  >
+                    <h3 className="font-semibold text-gray-800 mb-2">Primera Visita</h3>
+                    <p className="text-gray-600 text-sm">
+                      Una vez programada, se requiere un <span className="font-semibold">pago anticipado del 50%</span> mediante transferencia bancaria. El 50% restante se abona al finalizar la sesión.
+                    </p>
+                  </div>
+
+                  <div
+                    className="rounded-xl p-4"
+                    style={{ backgroundColor: "var(--light-bg)" }}
+                  >
+                    <h3 className="font-semibold text-gray-800 mb-2">Seguimientos</h3>
+                    <p className="text-gray-600 text-sm">
+                      El pago se realiza al término de cada sesión. Disponible en efectivo (presenciales) o transferencia bancaria.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Datos Bancarios */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Building2 className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-semibold mb-4" style={{ color: "var(--primary-green)" }}>
+                  Datos Bancarios
+                </h2>
+
+                <div
+                  className="rounded-xl p-6 text-center"
+                  style={{ backgroundColor: "var(--primary-green)" }}
+                >
+                  <p className="text-white/80 text-sm mb-2">IBAN para transferencias</p>
+                  <p className="text-white font-mono text-lg sm:text-xl font-bold tracking-wider">
+                    ES44 2100 0362 1402 0077 3521
+                  </p>
+                </div>
+
+                <p className="text-gray-500 text-sm mt-4 text-center">
+                  Indica tu <span className="font-medium">nombre y apellidos</span> en el concepto de la transferencia.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Cancelación */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-coral)" }}
+              >
+                <XCircle className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-semibold mb-4" style={{ color: "var(--primary-green)" }}>
+                  Política de Cancelación
+                </h2>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div
+                    className="rounded-xl p-4 border-2"
+                    style={{ borderColor: "var(--primary-green)", backgroundColor: "var(--light-bg)" }}
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">✓</span>
+                      <h3 className="font-semibold text-gray-800">Con +24h</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      Cancela o reprograma tu cita sin coste alguno.
+                    </p>
+                  </div>
+
+                  <div
+                    className="rounded-xl p-4 border-2"
+                    style={{ borderColor: "var(--accent-coral)", backgroundColor: "#fef2f2" }}
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">✗</span>
+                      <h3 className="font-semibold text-gray-800">Menos de 24h</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      Se pierde el importe de la reserva.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Reprogramación */}
+          <section className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div
+                className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ backgroundColor: "var(--accent-gold)" }}
+              >
+                <Calendar className="w-5 h-5" style={{ color: "var(--primary-green)" }} />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold mb-3" style={{ color: "var(--primary-green)" }}>
+                  Reprogramación de Citas
+                </h2>
+                <p className="text-gray-600">
+                  Las citas pueden reprogramarse siempre que avises con al menos <span className="font-semibold">24 horas de antelación</span>. Buscaremos un nuevo horario que se ajuste a tus necesidades.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Contacto */}
+          <section
+            className="rounded-2xl p-6 sm:p-8"
+            style={{ backgroundColor: "var(--primary-green)" }}
+          >
+            <h2 className="text-xl font-semibold mb-6 text-white text-center">
+              ¿Tienes dudas? Contáctame
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="tel:+34636019161"
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition cursor-pointer"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">+34 636 019 161</span>
+              </a>
+              <a
+                href="mailto:carla.martinez@codinucat.cat"
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition cursor-pointer"
+              >
+                <Mail className="w-4 h-4" />
+                <span className="text-sm">Email</span>
+              </a>
+              <a
+                href="https://instagram.com/carlinsmartinez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white hover:bg-white/20 transition cursor-pointer"
+              >
+                <Instagram className="w-4 h-4" />
+                <span className="text-sm">@carlinsmartinez</span>
+              </a>
+            </div>
+          </section>
+
+        </div>
+
+        {/* Footer */}
+        <div className="mt-12 text-center text-sm text-gray-500">
+          <p>Última actualización: Noviembre 2025</p>
+        </div>
+      </div>
     </main>
   );
 }
