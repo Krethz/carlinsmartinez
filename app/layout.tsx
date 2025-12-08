@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://carlinsmartinez.com"),
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsApp />
 
         {/* Structured Data - JSON-LD */}
         <script
