@@ -276,25 +276,6 @@ export default function Services() {
                     <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                       {service.description}
                     </p>
-
-                    {/* Price and Arrow */}
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                      <div>
-                        <span className="text-xs text-gray-500">desde</span>
-                        <span
-                          className="text-xl font-bold ml-1"
-                          style={{ color: "var(--accent-coral)" }}
-                        >
-                          {service.startingPrice}
-                        </span>
-                      </div>
-                      <div
-                        className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:translate-x-1"
-                        style={{ backgroundColor: "var(--primary-green)" }}
-                      >
-                        <ArrowRight size={18} className="text-white" />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </motion.div>

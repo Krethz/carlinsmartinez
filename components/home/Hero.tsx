@@ -5,9 +5,9 @@ import { Sparkles, Heart, Target, Clock, Salad } from "lucide-react";
 
 const benefits = [
   { icon: Heart, text: "Mejora tu salud y energía" },
+  { icon: Clock, text: "Desarrolla hábitos saludables" },
+  { icon: Salad, text: "Aprende a cuidar tu cuerpo" },
   { icon: Target, text: "Planes 100% personalizados" },
-  { icon: Clock, text: "Resultados visibles en semanas" },
-  { icon: Salad, text: "Alimentación equilibrada y deliciosa" },
 ];
 
 export default function Hero() {
@@ -174,7 +174,7 @@ export default function Hero() {
             }
           >
             <Sparkles className="w-5 h-5 mr-2" />
-            Agenda Tu Consulta
+            Agenda tu visita
           </Button>
           <Button
             size="lg"

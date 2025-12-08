@@ -68,7 +68,7 @@ export default function Navbar() {
             className="cursor-pointer rounded-full px-6"
             style={{ backgroundColor: "#E8DCC8", color: "#596856" }}
           >
-            Agendar Cita
+            Agenda tu visita
           </Button>
         </div>
 

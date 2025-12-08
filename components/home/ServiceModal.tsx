@@ -187,7 +187,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                             background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
                                         }}
                                     >
-                                        Reservar Consulta
+                                        Agenda tu visita
                                     </button>
                                 </div>
                             </div>
