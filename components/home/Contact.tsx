@@ -24,14 +24,28 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simular envío
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({ name: "", email: "", phone: "", message: "" });
-
-    setTimeout(() => setSubmitSuccess(false), 3000);
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o contáctanos directamente.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o contáctanos directamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
