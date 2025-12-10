@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     // Enviar email
     const data = await resend.emails.send({
-      from: 'Formulario Web <onboarding@resend.dev>', // Cambiar después de verificar dominio
+      from: 'Carla Martínez <contacto@carlinsmartinez.com>',
       to: ['carlamartinez.nutricion@gmail.com'],
       replyTo: email,
       subject: `Nueva consulta de ${name}`,
