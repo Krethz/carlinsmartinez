@@ -183,7 +183,7 @@ export default function Contact() {
                       ) : (
                         <>
                           <Send className="w-5 h-5 mr-2" />
-                          Enviar Mensaje
+                          Enviar mensaje
                         </>
                       )}
                     </Button>
