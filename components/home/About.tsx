@@ -26,7 +26,7 @@ export default function About() {
           >
             <div className="relative w-full h-[350px] sm:h-[450px] md:h-[500px]">
               <Image
-                src="/images/fotoperfil.jpg"
+                src="/images/profile_photo.jpg"
                 alt="Carla Martínez - Dietista Nutricionista"
                 fill
                 className="object-cover object-top shadow-lg hover:shadow-xl transition-shadow duration-300"

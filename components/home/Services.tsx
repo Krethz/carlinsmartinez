@@ -103,7 +103,7 @@ export default function Services() {
       footer: "Con un enfoque realista, personalizado y sin restricciones innecesarias. Te acompañaré con cercanía y evidencia científica para que vivas esta etapa con tranquilidad y confianza.",
       startingPrice: "80€",
       images: [
-        "/images/embaras1.jpg",
+        "/images/pregnancy_1.jpg",
         "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1521999693109-d9001e71e72a?w=500&auto=format&fit=crop"
       ]
@@ -129,9 +129,9 @@ export default function Services() {
       footer: "Con una visión práctica, respetuosa y basada en evidencia científica, trabajaremos un plan nutricional que se ajuste a tus valores, estilo de vida y objetivos.",
       startingPrice: "80€",
       images: [
-        "/images/pure.jpg",
+        "/images/puree.jpg",
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop",
-        "/images/tostadas.jpg"
+        "/images/toast.jpg"
       ]
     },
     {
@@ -181,8 +181,8 @@ export default function Services() {
       ],
       startingPrice: "70€",
       images: [
-        "/images/pure.jpg",
-        "/images/tostadas.jpg",
+        "/images/puree.jpg",
+        "/images/toast.jpg",
         "https://images.unsplash.com/photo-1620005322693-012a87a071d7?w=500&auto=format&fit=crop"
       ]
     },
@@ -202,9 +202,9 @@ export default function Services() {
       ],
       startingPrice: "50€",
       images: [
-        "/images/antrop2.jpg",
-        "/images/nutridep1.jpg",
-        "/images/antrop5.jpg"
+        "/images/body_measurement_2.jpg",
+        "/images/sports_nutrition_1.jpg",
+        "/images/body_measurement_5.jpg"
       ]
     }
   ];

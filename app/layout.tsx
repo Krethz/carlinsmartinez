@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "Dietista Nutricionista colegiada. Especialista en nutrición deportiva, vegetariana, embarazo y alimentación infantil. Consultas online y presenciales.",
     images: [
       {
-        url: "/images/fotoperfil.jpg",
+        url: "/images/profile_photo.jpg",
         width: 800,
         height: 600,
         alt: "Carla Martínez - Dietista Nutricionista",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Carla Martínez | Dietista Nutricionista en Barcelona",
     description:
       "Dietista Nutricionista colegiada. Especialista en nutrición deportiva, vegetariana, embarazo y alimentación infantil.",
-    images: ["/images/fotoperfil.jpg"],
+    images: ["/images/profile_photo.jpg"],
   },
   verification: {
     google: "tu-codigo-de-verificacion-google", // Reemplazar con el código real
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               "@type": "LocalBusiness",
               "@id": "https://carlinsmartinez.com",
               name: "Carla Martínez - Dietista Nutricionista",
-              image: "https://carlinsmartinez.com/images/fotoperfil.jpg",
+              image: "https://carlinsmartinez.com/images/profile_photo.jpg",
               description:
                 "Dietista Nutricionista colegiada en Barcelona. Especialista en nutrición deportiva, vegetariana, embarazo y alimentación infantil.",
               url: "https://carlinsmartinez.com",
