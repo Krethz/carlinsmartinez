@@ -160,14 +160,15 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                 )}
                                 {service.images && (
                                     <div className="mt-6 flex justify-center">
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 justify-items-center">
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                                             {service.images.map((img, idx) => (
-                                                <div key={idx} className="relative w-[300px] h-[300px]">
+                                                <div key={idx} className="w-full max-w-[300px] mx-auto aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow">
                                                     <Image
                                                         src={img}
                                                         alt={`${service.title} ${idx + 1}`}
-                                                        fill
-                                                        className="rounded-xl object-cover object-center shadow-md hover:shadow-lg transition-shadow"
+                                                        width={300}
+                                                        height={300}
+                                                        className="object-cover w-full h-full"
                                                     />
                                                 </div>
                                             ))}

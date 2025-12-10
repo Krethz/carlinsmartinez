@@ -50,9 +50,8 @@ export default function Services() {
       ],
       startingPrice: "80€",
       images: [
-        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&auto=format&fit=crop"
+        "/images/running.webp",
+        "/images/bicycle.webp"
       ]
     },
     {
