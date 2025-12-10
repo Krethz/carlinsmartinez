@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Activity, Trophy, Baby, Leaf, BookOpen, Ruler, ArrowRight } from "lucide-react";
+import { Activity, Trophy, Baby, Leaf, BookOpen, Ruler } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import ServiceModal from "./ServiceModal";
 

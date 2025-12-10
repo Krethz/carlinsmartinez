@@ -20,9 +20,9 @@ export default function FloatingWhatsApp() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
         >
-            {/* Pulse effect */}
+            {/* Pulse effect - only on desktop for performance */}
             <motion.div
-                className="absolute inset-0 rounded-full bg-green-500"
+                className="absolute inset-0 rounded-full bg-green-500 hidden sm:block"
                 animate={{
                     scale: [1, 1.3, 1],
                     opacity: [0.7, 0, 0.7],

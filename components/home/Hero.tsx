@@ -28,36 +28,35 @@ export default function Hero() {
         `,
       }}
     >
-      {/* Animated floating particles */}
-      {[...Array(6)].map((_, i) => (
+      {/* Animated floating particles - reduced for performance */}
+      {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full"
+          className="absolute rounded-full will-change-transform"
           style={{
-            width: Math.random() * 100 + 50,
-            height: Math.random() * 100 + 50,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            width: 80 + i * 30,
+            height: 80 + i * 30,
+            left: `${20 + i * 30}%`,
+            top: `${15 + i * 25}%`,
             background: `radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, 15, 0],
-            scale: [1, 1.1, 1],
+            y: [0, -20, 0],
+            scale: [1, 1.05, 1],
           }}
           transition={{
-            duration: 6 + i * 0.5,
+            duration: 8 + i,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.8,
+            delay: i * 1.5,
           }}
         />
       ))}
 
-      {/* Large decorative blurs */}
-      <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-gradient-to-br from-[#8fa97a]/30 to-transparent rounded-full blur-[100px]" />
-      <div className="absolute -bottom-32 -right-20 w-[600px] h-[600px] bg-gradient-to-tl from-[#d4af37]/20 to-transparent rounded-full blur-[120px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/5 to-transparent rounded-full blur-[80px]" />
+      {/* Large decorative blurs - reduced on mobile for performance */}
+      <div className="absolute -top-20 -left-20 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-gradient-to-br from-[#8fa97a]/30 to-transparent rounded-full blur-[60px] sm:blur-[100px]" />
+      <div className="absolute -bottom-32 -right-20 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-gradient-to-tl from-[#d4af37]/20 to-transparent rounded-full blur-[80px] sm:blur-[120px]" />
+      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-white/5 to-transparent rounded-full blur-[80px]" />
 
       {/* Subtle grid pattern overlay */}
       <div
