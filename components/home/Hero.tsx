@@ -91,20 +91,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="mb-4 sm:mb-6"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            Transforma Tu Vida
-            <br />
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage: "linear-gradient(135deg, var(--accent-gold) 0%, #f5d77a 50%, var(--accent-gold) 100%)",
-                WebkitBackgroundClip: "text",
-              }}
-            >
-              Con Nutrición
-            </span>
-          </h1>
+          <img
+            src="/images/logo_beige.png"
+            alt="Carlin Smart Martínez - Nutricionista"
+            className="w-auto h-32 sm:h-40 md:h-52 lg:h-64 mx-auto object-contain"
+          />
         </motion.div>
 
         <motion.p

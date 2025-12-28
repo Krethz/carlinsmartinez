@@ -82,7 +82,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/images/logo_beige.png" type="image/png" />
+        <link rel="icon" href="/images/logo_beige.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/logo_beige.png" sizes="16x16" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#566441" />

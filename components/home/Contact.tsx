@@ -251,8 +251,8 @@ export default function Contact() {
 
               <div className="rounded-2xl overflow-hidden shadow-xl relative h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop"
-                  alt="Alimentos saludables"
+                  src="/images/IMG_6265.jpg"
+                  alt="Imagen de contacto"
                   fill
                   className="object-cover"
                 />
