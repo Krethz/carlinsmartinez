@@ -97,7 +97,7 @@ export default function Hero() {
           }}
         >
           <Sparkles className="w-4 h-4" style={{ color: "var(--accent-gold)" }} />
-          <span className="text-white/90 text-sm font-medium">Nutricionista Certificada</span>
+          <span className="text-white/90 text-sm font-medium">Dietista - Nutricionista</span>
         </motion.div>
 
         <motion.p
