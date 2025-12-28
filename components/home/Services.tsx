@@ -50,8 +50,9 @@ export default function Services() {
       ],
       startingPrice: "80€",
       images: [
-        "/images/running.webp",
-        "/images/bicycle.webp"
+        "/images/cristina_lunge.jpeg",
+        "/images/bicycle.webp",
+        "/images/andreu_jump.jpeg"
       ]
     },
     {
@@ -181,9 +182,9 @@ export default function Services() {
       ],
       startingPrice: "70€",
       images: [
-        "/images/puree.jpg",
-        "/images/toast.jpg",
-        "https://images.unsplash.com/photo-1620005322693-012a87a071d7?w=500&auto=format&fit=crop"
+        "/images/IMG_6182.jpeg",
+        "/images/IMG_6231.JPG",
+        "/images/puree.jpg"
       ]
     },
     {

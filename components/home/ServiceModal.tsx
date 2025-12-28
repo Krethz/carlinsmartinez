@@ -169,6 +169,9 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                                         width={300}
                                                         height={300}
                                                         className="object-cover w-full h-full"
+                                                        style={{
+                                                            objectPosition: img.includes('andreu_jump') ? 'top' : 'center'
+                                                        }}
                                                     />
                                                 </div>
                                             ))}
