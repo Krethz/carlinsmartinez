@@ -93,12 +93,13 @@ export default function FAQ() {
             viewport={{ once: true }}
             className="mt-8 text-center"
           >
-            <div className="relative w-full max-w-md mx-auto h-64 rounded-lg overflow-hidden shadow-xl">
+            <div className="relative w-full max-w-2xl mx-auto h-56 sm:h-50 md:h-72 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=600&h=400&fit=crop"
-                alt="Consulta online"
+                src="/nutrition_consultation_image_1766562510818.png"
+                alt="Alimentación saludable y nutrición"
                 fill
-                className="object-cover"
+                className="object-cover object-center md:object-[center_35%]"
+                priority={false}
               />
             </div>
           </motion.div>

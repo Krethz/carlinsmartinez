@@ -15,8 +15,8 @@ export default function Home() {
       <About />
       <Services />
       <FAQ />
-      <Testimonials />
       <Contact />
+      <Testimonials />
     </div>
   );
 }
