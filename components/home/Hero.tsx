@@ -71,6 +71,19 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-4 sm:mb-6"
+        >
+          <img
+            src="/images/logo_beige.png"
+            alt="Carlin Smart Martínez - Nutricionista"
+            className="w-auto h-32 sm:h-40 md:h-52 lg:h-64 mx-auto object-contain"
+          />
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,19 +98,6 @@ export default function Hero() {
         >
           <Sparkles className="w-4 h-4" style={{ color: "var(--accent-gold)" }} />
           <span className="text-white/90 text-sm font-medium">Nutricionista Certificada</span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-4 sm:mb-6"
-        >
-          <img
-            src="/images/logo_beige.png"
-            alt="Carlin Smart Martínez - Nutricionista"
-            className="w-auto h-32 sm:h-40 md:h-52 lg:h-64 mx-auto object-contain"
-          />
         </motion.div>
 
         <motion.p

@@ -41,14 +41,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         <button
           onClick={() => isHomePage ? scrollToSection("hero") : router.push("/")}
-          className="cursor-pointer text-xl sm:text-2xl font-bold tracking-tight"
+          className="cursor-pointer text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap"
           style={{ color: !isHomePage || isScrolled ? "#2D5F3F" : "white" }}
         >
           Carla Martínez
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {["Inicio", "Sobre Mí", "Servicios", "Testimonios", "Contacto"].map(
             (item) => (
               <button
@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="cursor-pointer md:hidden p-1 flex-shrink-0"
+          className="cursor-pointer lg:hidden p-1 flex-shrink-0"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4 space-y-1 border-t border-gray-100">
+        <div className="lg:hidden bg-white shadow-lg py-4 space-y-1 border-t border-gray-100">
           {["Inicio", "Sobre Mí", "Servicios", "Testimonios", "Contacto"].map(
             (item) => (
               <button

@@ -77,7 +77,7 @@ export default function Services() {
       ],
       startingPrice: "120€",
       images: [
-        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=300&fit=crop",
+        "/images/aleix_clean.jpeg",
         "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?w=300&h=300&fit=crop",
         "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=300&h=300&fit=crop"
       ]
@@ -131,7 +131,7 @@ export default function Services() {
       startingPrice: "80€",
       images: [
         "/images/puree.jpg",
-        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&h=300&fit=crop",
+        "/images/IMG_6267.jpg",
         "/images/toast.jpg"
       ]
     },
@@ -156,7 +156,7 @@ export default function Services() {
       footer: "Una consulta pensada para acompañarte sin juicios, con información actualizada y adaptada a tu realidad. Trabajaremos con calma, con evidencia y con respeto por los ritmos del bebé y de la familia.",
       startingPrice: "80€",
       images: [
-        "https://images.unsplash.com/photo-1595348020949-87cdfbb44174?w=500&auto=format&fit=crop",
+        "/images/bebe_comiendo.jpeg",
         "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=500&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?w=500&auto=format&fit=crop"
       ]
@@ -184,7 +184,7 @@ export default function Services() {
       images: [
         "/images/IMG_6182.jpeg",
         "/images/IMG_6231.JPG",
-        "/images/puree.jpg"
+        "/images/educacion_alimentaria.jpeg"
       ]
     },
     {
