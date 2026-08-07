@@ -56,11 +56,11 @@ export default function About() {
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
-              Mi propósito es acompañarte en el camino hacia una mejor salud, más vitalidad y un mayor rendimiento, ya sea en tu día a día o en tu rendimiento deportivo, siempre desde un enfoque cercano, adaptado a ti, flexible y libre de juicios.
+            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Puedes visitarme en mi consulta de Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
             </p>
 
             <p className="text-base text-gray-700 mb-8 leading-relaxed text-justify">
-              Trabajo basándome en la evidencia científica, lejos de dietas milagro y restricciones innecesarias. Defiendo una nutrición práctica, realista y sostenible, que se ajuste a tu estilo de vida y te permita avanzar de manera segura y consciente.
+            No trabajo con dietas milagro ni restricciones sin sentido. Mi enfoque se apoya en la evidencia científica y busca soluciones prácticas, realistas y sostenibles en el tiempo, que encajen de verdad con tu estilo de vida y te ayuden a avanzar con seguridad.
             </p>
 
             <div className="mt-8">
