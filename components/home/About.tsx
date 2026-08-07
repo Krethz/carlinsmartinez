@@ -52,11 +52,11 @@ export default function About() {
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
-              Soy Carla Martínez, Dietista-Nutricionista especializada en nutrición vegetariana a lo largo de las distintas etapas del ciclo vital y en nutrición deportiva. Atiendo de forma presencial en Sant Quirze del Vallès y también ofrezco consultas online, para que cuidarte sea posible estés donde estés.
+            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Puedes visitarme en mi consulta de Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
-            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Puedes visitarme en mi consulta de Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
+            Creo en un acompañamiento cercano y sin juicios, adaptado a tus circunstancias y objetivos, ya sea que busques mejorar tu salud en el día a día o dar un paso más en tu rendimiento deportivo.
             </p>
 
             <p className="text-base text-gray-700 mb-8 leading-relaxed text-justify">
