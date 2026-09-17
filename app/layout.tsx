@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://carlinsmartinez.com"),
@@ -93,6 +94,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <main>{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <Analytics />
 
         {/* Structured Data - JSON-LD */}
         <script
