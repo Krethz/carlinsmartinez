@@ -110,41 +110,6 @@ export default function Hero() {
           tus objetivos de salud y bienestar
         </motion.p>
 
-        {/* Benefits Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mb-10 sm:mb-12"
-        >
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="flex flex-col items-center gap-2 p-4 rounded-2xl transition-all duration-300 hover:scale-105"
-              style={{
-                background: "rgba(255, 255, 255, 0.08)",
-                backdropFilter: "blur(12px)",
-                border: "1px solid rgba(255, 255, 255, 0.12)",
-              }}
-            >
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center mb-1"
-                style={{
-                  background: "linear-gradient(135deg, var(--accent-gold) 0%, #f5d77a 100%)",
-                }}
-              >
-                <benefit.icon className="w-5 h-5 text-[#3d4a2e]" />
-              </div>
-              <span className="text-white/90 text-sm font-medium text-center leading-snug">
-                {benefit.text}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div>
-
         {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -165,7 +130,6 @@ export default function Hero() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            <Sparkles className="w-5 h-5 mr-2" />
             Agenda tu visita
           </Button>
           <Button

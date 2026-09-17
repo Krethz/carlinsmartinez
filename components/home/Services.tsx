@@ -52,7 +52,8 @@ export default function Services() {
       images: [
         "/images/cristina_lunge.jpeg",
         "/images/bicycle.webp",
-        "/images/andreu_jump.jpeg"
+        "/images/andreu_jump.jpeg",
+        "/images/carla_yoga.jpg"
       ]
     },
     {
@@ -106,7 +107,8 @@ export default function Services() {
       images: [
         "/images/pregnancy_1.jpg",
         "/images/nutri_embarazo_1.jpeg",
-        "/images/nutri_embarazo_2.jpeg"
+        "/images/nutri_embarazo_2.jpeg",
+        "/images/ecografia.jpg"
       ]
     },
     {
@@ -132,7 +134,8 @@ export default function Services() {
       images: [
         "/images/puree.jpg",
         "/images/IMG_6267.jpg",
-        "/images/toast.jpg"
+        "/images/toast.jpg",
+        "/images/vegan_nutrition_4.jpg",
       ]
     },
     {
@@ -183,9 +186,10 @@ export default function Services() {
       ],
       startingPrice: "70€",
       images: [
-        "/images/IMG_6182.jpeg",
+        "/images/educacion_1.jpg",
         "/images/IMG_6231.JPG",
-        "/images/educacion_alimentaria.jpeg"
+        "/images/educacion_alimentaria.jpeg",
+        "/images/vegan_nutrition_4.jpg",
       ]
     },
     {
@@ -206,7 +210,8 @@ export default function Services() {
       images: [
         "/images/body_measurement_2.jpg",
         "/images/sports_nutrition_1.jpg",
-        "/images/body_measurement_5.jpg"
+        "/images/body_measurement_5.jpg",
+        "/images/antropometria4.jpg"
       ]
     }
   ];

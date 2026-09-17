@@ -95,7 +95,7 @@ export default function FAQ() {
           >
             <div className="relative w-full max-w-2xl mx-auto h-56 sm:h-50 md:h-72 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/nutrition_consultation_image_1766562510818.png"
+                src="/images/IMG_6182.jpeg"
                 alt="Alimentación saludable y nutrición"
                 fill
                 className="object-cover object-center md:object-[center_35%]"
