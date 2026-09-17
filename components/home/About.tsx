@@ -5,13 +5,15 @@ import { GraduationCap } from "lucide-react";
 
 export default function About() {
   const formacion = [
-    "Grado en Ciencia y Tenología de los Alimentos (Universidad de Barcelona)",
     "Grado en Nutrición Humana y Dietética (Universidad de Vic)",
     "Health Coach (Institute For Integrative Nutrition, NY)",
     "Formación en nutrición y suplementación deportiva (CEAN)",
     "Acreditación ISAK I y II en Antropometría",
     "Curso en Análisis de Datos Antropométricos – G-SE (Francis Holway)",
-    "Curso de experto en Trastornos de la Conducta Alimentaria (Norte Salud- Griselda Herrero)"
+    "Curso de experto en Trastornos de la Conducta Alimentaria (Norte Salud - Griselda Herrero)",
+    "Curso de Experto en Asesoría y Consejería en Lactancia Materna (ISNUT)",
+    "Técnica de Sala Fitness (ANEF)",
+    "Instructora de Pilates (STOTT PILATES)",
   ];
 
   return (
@@ -47,12 +49,9 @@ export default function About() {
             <p className="text-lg mb-2" style={{ color: 'var(--primary-green)', fontStyle: 'italic' }}>
               Dietista Nutricionista col.CAT002241
             </p>
-            <p className="text-base text-gray-600 mb-8">
-              Tecnóloga Alimentaria
-            </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
-            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Puedes visitarme en Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
+            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Esta segunda pasión no es casualidad: practico ejercicio físico desde pequeña, y esa vivencia personal es la que me llevó a formarme también como técnica de sala fitness e instructora de pilates, además de especializarme en nutrición deportiva. Entender el movimiento desde dentro me permite acompañar a quienes entrenan con una mirada más completa, que une la alimentación y la actividad física de forma coherente. Puedes visitarme en Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">

@@ -135,7 +135,7 @@ export default function Services() {
         "/images/puree.jpg",
         "/images/IMG_6267.jpg",
         "/images/toast.jpg",
-        "/images/vegan_nutrition_4.jpg",
+        "/images/vegan_nutrition_5.jpg",
       ]
     },
     {
