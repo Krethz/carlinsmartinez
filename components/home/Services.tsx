@@ -105,8 +105,8 @@ export default function Services() {
       startingPrice: "80€",
       images: [
         "/images/pregnancy_1.jpg",
-        "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1521999693109-d9001e71e72a?w=500&auto=format&fit=crop"
+        "/images/nutri_embarazo_1.jpeg",
+        "/images/nutri_embarazo_2.jpeg"
       ]
     },
     {
@@ -156,9 +156,10 @@ export default function Services() {
       footer: "Una consulta pensada para acompañarte sin juicios, con información actualizada y adaptada a tu realidad. Trabajaremos con calma, con evidencia y con respeto por los ritmos del bebé y de la familia.",
       startingPrice: "80€",
       images: [
-        "/images/bebe_comiendo.jpeg",
-        "https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=500&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?w=500&auto=format&fit=crop"
+        "/images/nutri_bebe_1.webp",
+        "/images/nutri_bebe_2.webp",
+        "/images/nutri_bebe_3.webp",
+        "/images/nutri_bebe_4.webp"
       ]
     },
     {

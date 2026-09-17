@@ -24,12 +24,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-full h-[350px] sm:h-[450px] md:h-[500px]">
+            <div className="relative w-full aspect-[3/4] max-h-[70vh] md:max-h-none">
               <Image
                 src="/images/profile_photo.jpg"
                 alt="Carla Martínez - Dietista Nutricionista"
                 fill
-                className="object-cover object-top shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="object-cover object-center shadow-lg hover:shadow-xl transition-shadow duration-300"
                 priority
               />
             </div>
@@ -52,7 +52,7 @@ export default function About() {
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
-            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Puedes visitarme en mi consulta de Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
+            Me llamo Carla Martínez y soy Dietista-Nutricionista. Mi trabajo se centra en dos áreas que me apasionan: la nutrición vegetariana en todas las etapas de la vida y la nutrición deportiva. Puedes visitarme en Sant Quirze del Vallès o, si lo prefieres, seguir el proceso online desde donde te encuentres.
             </p>
 
             <p className="text-base text-gray-700 mb-4 leading-relaxed text-justify">
