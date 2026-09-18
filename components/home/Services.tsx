@@ -79,8 +79,9 @@ export default function Services() {
       startingPrice: "120€",
       images: [
         "/images/aleix_clean.jpeg",
-        "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?w=300&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=300&h=300&fit=crop"
+        "/images/competi1.jpeg",
+        "/images/competi2.jpeg",
+        "/images/worm.jpeg",
       ]
     },
     {
@@ -106,9 +107,9 @@ export default function Services() {
       startingPrice: "80€",
       images: [
         "/images/pregnancy_1.jpg",
-        "/images/nutri_embarazo_1.jpeg",
-        "/images/nutri_embarazo_2.jpeg",
-        "/images/ecografia.jpg"
+        "/images/ecografia.jpg",
+        "/images/embarazo_2.jpeg",
+        "/images/nutri_embarazo_1.jpeg"
       ]
     },
     {
