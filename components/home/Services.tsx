@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Activity, Trophy, Baby, Leaf, BookOpen, Ruler } from "lucide-react";
+import { Activity, Trophy, Baby, Leaf, BookOpen, Ruler, ArrowUpRight, MessageCircle } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import ServiceModal from "./ServiceModal";
+import SectionHeading from "./SectionHeading";
 
 interface PricingItem {
   item: string;
@@ -219,74 +221,110 @@ export default function Services() {
 
   return (
     <>
-      <section id="servicios" className="py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-              style={{ color: "var(--primary-green)" }}
-            >
-              Servicios y tarifas
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Consultas nutricionales personalizadas para cada objetivo
+      <section id="servicios" className="py-24 md:py-32 px-5 sm:px-6 bg-ivory">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <SectionHeading
+              eyebrow="Servicios y tarifas"
+              title={
+                <>
+                  Un plan para <span className="italic text-olive">cada objetivo</span>
+                </>
+              }
+            />
+            <p className="max-w-sm text-olive-dark/70 leading-relaxed">
+              Consultas nutricionales personalizadas, presenciales u online. Toca cualquier servicio para ver
+              tarifas y qué incluye.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Services Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedService(service)}
-                className="group cursor-pointer"
-              >
-                <div className="relative h-full bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-transparent overflow-hidden">
-                  {/* Gradient overlay on hover */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(22, 163, 74, 0.05) 0%, rgba(34, 197, 94, 0.1) 100%)"
-                    }}
-                  />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[300px]">
+            {services.map((service, index) => {
+              const cover = service.images?.[0] ?? service.image;
+              const featured = index === 0;
 
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                      style={{
-                        background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
-                      }}
-                    >
-                      <service.icon size={28} className="text-white" />
-                    </div>
+              return (
+                <motion.button
+                  type="button"
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: (index % 4) * 0.08 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  onClick={() => setSelectedService(service)}
+                  className={`group cursor-pointer relative overflow-hidden rounded-[2rem] text-left bg-olive-dark ${
+                    featured ? "sm:col-span-2 lg:row-span-2" : ""
+                  }`}
+                >
+                  {cover && (
+                    <Image
+                      src={cover}
+                      alt={service.title}
+                      fill
+                      sizes={featured ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-olive-deep via-olive-deep/55 to-olive-deep/5" />
 
-                    {/* Title */}
+                  <div className="absolute top-4 left-4 right-4 flex items-start justify-between">
+                    <span className="w-11 h-11 rounded-2xl bg-ivory/90 backdrop-blur flex items-center justify-center text-olive">
+                      <service.icon className="w-5 h-5" />
+                    </span>
+                    <span className="rounded-full bg-olive-deep/60 backdrop-blur px-3 py-1.5 text-xs font-medium text-peach">
+                      desde {service.startingPrice}
+                    </span>
+                  </div>
+
+                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                     <h3
-                      className="text-lg font-bold mb-2 transition-colors"
-                      style={{ color: "var(--primary-green)" }}
+                      className={`font-display text-cream leading-tight ${
+                        featured ? "text-3xl sm:text-4xl" : "text-2xl"
+                      }`}
                     >
                       {service.title}
                     </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    <p
+                      className={`mt-2 text-cream/75 text-sm leading-relaxed ${
+                        featured ? "max-w-md sm:text-base" : "line-clamp-2"
+                      }`}
+                    >
                       {service.description}
                     </p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-peach">
+                      Ver detalles
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.button>
+              );
+            })}
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.16 }}
+              viewport={{ once: true, margin: "-60px" }}
+              className="sm:col-span-2 relative overflow-hidden rounded-[2rem] bg-peach p-7 sm:p-8 flex flex-col justify-between"
+            >
+              <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-coral/15" />
+              <div className="relative">
+                <p className="font-display text-3xl text-olive-deep leading-tight">
+                  ¿No sabes cuál <span className="italic">elegir</span>?
+                </p>
+                <p className="mt-3 text-olive-dark/75 max-w-sm">
+                  Escríbeme, cuéntame tu caso y te recomendaré la consulta que mejor encaja contigo.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
+                className="relative cursor-pointer self-start mt-6 inline-flex items-center gap-2 rounded-full bg-olive px-6 py-3 text-sm font-semibold text-peach transition-colors hover:bg-olive-dark"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Hablemos
+              </button>
+            </motion.div>
           </div>
         </div>
       </section>

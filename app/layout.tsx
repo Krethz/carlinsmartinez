@@ -5,6 +5,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { Analytics } from "@vercel/analytics/next";
+import { Fraunces, DM_Sans } from "next/font/google";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dmsans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://carlinsmartinez.com"),
@@ -81,7 +95,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning className={`${fraunces.variable} ${dmSans.variable}`}>
       <head>
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -89,7 +103,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="geo.region" content="ES-CT" />
         <meta name="geo.placename" content="Barcelona" />
       </head>
-      <body className="min-h-screen bg-white">
+      <body className="min-h-screen bg-ivory font-sans">
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Star, ChevronLeft, ChevronRight, Quote, MapPin } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
 
   // 🔄 EDITA ESTAS RESEÑAS CON LAS REALES DE GOOGLE
@@ -46,160 +47,134 @@ export default function Testimonials() {
     },
   ];
 
-  // Auto-play functionality
   useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % reviews.length);
-      }, 4000);
+    if (isPaused) return;
 
-      return () => clearInterval(interval);
-    }
+    const interval = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
   }, [isPaused, reviews.length]);
 
   const nextReview = () => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % reviews.length);
   };
 
   const prevReview = () => {
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
 
   const goToReview = (index: number) => {
+    setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
 
+  const review = reviews[currentIndex];
+  const initials = review.name
+    .split(" ")
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("");
+
   return (
-    <section
-      id="testimonios"
-      className="py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
-      style={{ backgroundColor: "var(--light-bg)" }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-            style={{ color: "var(--primary-green)" }}
-          >
-            Lo que opinan de mí
-          </h2>
-        </motion.div>
-
-
-        <div className="relative">
-          {/* Navigation Arrows - Always visible */}
-          <button
-            onClick={prevReview}
-            className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center"
-            style={{ color: "var(--primary-green)" }}
-            aria-label="Reseña anterior"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-
-          <button
-            onClick={nextReview}
-            className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center"
-            style={{ color: "var(--primary-green)" }}
-            aria-label="Siguiente reseña"
-          >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-
-          {/* Carousel Container */}
-          <div className="px-12 md:px-20">
-            <div className="relative overflow-visible">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full max-w-2xl mx-auto"
-                >
-                  <Card
-                    className="border-none shadow-xl"
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                    onTouchStart={() => setIsPaused(true)}
-                    onTouchEnd={() => setIsPaused(false)}
-                  >
-                    <CardContent className="p-6 md:p-10">
-                      {/* Stars */}
-                      <div className="flex gap-1 mb-6 justify-center">
-                        {[...Array(reviews[currentIndex].rating)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="w-5 h-5 md:w-6 md:h-6 fill-current"
-                            style={{ color: "var(--accent-gold)" }}
-                          />
-                        ))}
-                      </div>
-
-                      {/* Review Text */}
-                      <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6 text-center italic">
-                        &ldquo;{reviews[currentIndex].text}&rdquo;
-                      </p>
-
-                      {/* Author */}
-                      <div className="text-center">
-                        <div
-                          className="font-bold text-lg mb-1"
-                          style={{ color: "var(--primary-green)" }}
-                        >
-                          {reviews[currentIndex].name}
-                        </div>
-
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+    <section id="testimonios" className="py-24 md:py-32 px-5 sm:px-6 bg-cream overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <SectionHeading
+            eyebrow="Testimonios"
+            title={
+              <>
+                Lo que <span className="italic text-olive">opinan</span> de mí
+              </>
+            }
+          />
+          <div className="flex items-center gap-3">
+            <button
+              onClick={prevReview}
+              className="cursor-pointer w-12 h-12 rounded-full border border-olive/20 text-olive flex items-center justify-center transition-colors hover:bg-olive hover:text-peach"
+              aria-label="Reseña anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={nextReview}
+              className="cursor-pointer w-12 h-12 rounded-full bg-olive text-peach flex items-center justify-center transition-colors hover:bg-olive-dark"
+              aria-label="Siguiente reseña"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
+        </div>
 
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-8">
+        <div
+          className="relative rounded-[2.5rem] bg-ivory border border-olive/10 shadow-[0_30px_60px_rgba(44,54,33,0.08)] p-8 sm:p-12 md:p-16 min-h-[420px] sm:min-h-[380px]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          <Quote className="absolute top-8 right-8 sm:top-10 sm:right-12 w-16 h-16 sm:w-24 sm:h-24 text-peach" strokeWidth={1} />
+
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentIndex}
+              custom={direction}
+              initial={{ opacity: 0, x: direction * 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction * -40 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="relative"
+            >
+              <div className="flex gap-1 mb-6">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-coral text-coral" />
+                ))}
+              </div>
+
+              <blockquote className="font-display text-xl sm:text-2xl md:text-[1.75rem] leading-snug text-olive-deep max-w-4xl">
+                &ldquo;{review.text}&rdquo;
+              </blockquote>
+
+              <div className="mt-8 flex items-center gap-4">
+                <span className="w-12 h-12 rounded-full bg-olive text-peach flex items-center justify-center font-semibold">
+                  {initials}
+                </span>
+                <div>
+                  <p className="font-semibold text-olive-deep">{review.name}</p>
+                  <p className="text-sm text-olive-dark/60">Reseña en Google</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex gap-2">
             {reviews.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToReview(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                  ? "w-8"
-                  : "hover:opacity-75"
-                  }`}
-                style={{
-                  backgroundColor:
-                    index === currentIndex
-                      ? "var(--primary-green)"
-                      : "#d1d5db",
-                }}
+                className={`cursor-pointer h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? "w-10 bg-olive" : "w-2 bg-olive/20 hover:bg-olive/40"
+                }`}
                 aria-label={`Ir a reseña ${index + 1}`}
               />
             ))}
           </div>
 
-          {/* Google Link */}
-          <div className="text-center mt-8">
-            <a
-              href="https://maps.app.goo.gl/op254skqtwE18gWZ9?g_st=am"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-[var(--primary-green)] transition-colors font-medium"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-              </svg>
-              Ver todas las reseñas en Google
-            </a>
-          </div>
+          <a
+            href="https://maps.app.goo.gl/op254skqtwE18gWZ9?g_st=am"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-olive hover:text-olive-deep transition-colors"
+          >
+            <MapPin className="w-4 h-4" />
+            Ver todas las reseñas en Google
+          </a>
         </div>
       </div>
     </section>

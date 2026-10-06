@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Check } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface PricingItem {
@@ -55,66 +55,56 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 40 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
-                            style={{ width: "90vw", maxWidth: "850px" }}
+                            className="bg-ivory rounded-[1.75rem] sm:rounded-[2rem] shadow-2xl max-h-[90vh] sm:max-h-[85vh] overflow-hidden pointer-events-auto"
+                            style={{ width: "92vw", maxWidth: "860px" }}
                         >
-                            {/* Header with gradient */}
-                            <div
-                                className="relative p-3 sm:p-8 text-white"
-                                style={{
-                                    background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
-                                }}
-                            >
+                            <div className="relative overflow-hidden bg-olive-dark px-6 py-6 sm:px-10 sm:py-8 text-cream">
+                                <div className="grain absolute inset-0" />
                                 <button
                                     onClick={onClose}
-                                    className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-full transition-colors"
+                                    aria-label="Cerrar"
+                                    className="cursor-pointer absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                                 >
-                                    <X className="w-6 h-6" />
+                                    <X className="w-5 h-5" />
                                 </button>
 
-                                <div className="flex flex-col items-center gap-3 text-center">
-                                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                                        <service.icon size={32} className="text-white" />
+                                <div className="relative flex items-center gap-4 pr-12">
+                                    <div className="w-14 h-14 shrink-0 rounded-2xl bg-peach text-olive-dark flex items-center justify-center">
+                                        <service.icon size={26} />
                                     </div>
-                                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{service.title}</h2>
+                                    <h2 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight">{service.title}</h2>
                                 </div>
                             </div>
 
-                            {/* Content */}
-                            <div className="p-3 sm:p-8 overflow-y-auto max-h-[calc(90vh-140px)] sm:max-h-[calc(85vh-180px)]">
-                                {/* Description */}
-                                <p className="text-gray-700 mb-4 leading-relaxed">
+                            <div className="px-5 py-6 sm:p-10 overflow-y-auto max-h-[calc(90vh-110px)] sm:max-h-[calc(85vh-130px)]">
+                                <p className="font-display text-xl text-olive-deep mb-4 leading-snug">
                                     {service.description}
                                 </p>
 
                                 {service.fullDescription && (
-                                    <p className="text-gray-700 mb-6 leading-relaxed">
+                                    <p className="text-olive-dark/75 mb-8 leading-relaxed">
                                         {service.fullDescription}
                                     </p>
                                 )}
 
-                                {/* Pricing Table */}
                                 <div className="mb-8">
-                                    <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4" style={{ color: "var(--primary-green)" }}>
-                                        💰 Tarifas
+                                    <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-coral mb-4">
+                                        Tarifas
                                     </h3>
-                                    <div className="bg-gray-50 rounded-2xl overflow-x-auto overflow-y-visible">
+                                    <div className="rounded-3xl border border-olive/10 bg-cream overflow-x-auto">
                                         {service.pricing.map((price, idx) => (
                                             <div
                                                 key={idx}
-                                                className={`flex justify-between items-center gap-2 p-3 sm:p-4 min-w-[280px] ${idx < service.pricing.length - 1 ? "border-b border-gray-200" : ""
+                                                className={`flex justify-between items-center gap-3 px-5 py-4 min-w-[260px] ${idx < service.pricing.length - 1 ? "border-b border-olive/10" : ""
                                                     }`}
                                             >
                                                 <div className="flex-1 min-w-0">
-                                                    <span className="font-medium text-sm sm:text-base">{price.item}</span>
+                                                    <span className="font-medium text-olive-deep">{price.item}</span>
                                                     {price.detail && (
-                                                        <span className="text-xs sm:text-sm text-gray-500 block">{price.detail}</span>
+                                                        <span className="text-sm text-olive-dark/55 block">{price.detail}</span>
                                                     )}
                                                 </div>
-                                                <span
-                                                    className="text-lg sm:text-xl font-bold whitespace-nowrap"
-                                                    style={{ color: "var(--primary-green)" }}
-                                                >
+                                                <span className="font-display text-2xl text-olive whitespace-nowrap">
                                                     {price.price}
                                                 </span>
                                             </div>
@@ -122,27 +112,24 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                     </div>
                                 </div>
 
-                                {/* What's included */}
                                 <div className="mb-6">
-                                    <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4" style={{ color: "var(--primary-green)" }}>
-                                        {service.subtitle || "✨ ¿Qué incluye?"}
+                                    <h3 className="text-base sm:text-lg font-semibold text-olive-deep mb-4 leading-snug">
+                                        {service.subtitle || "¿Qué incluye?"}
                                     </h3>
                                     <ul className="space-y-3">
                                         {service.includes.map((item, idx) => (
                                             <li key={idx} className="flex items-start gap-3">
-                                                <span
-                                                    className="mt-1 w-2 h-2 rounded-full flex-shrink-0"
-                                                    style={{ backgroundColor: "var(--accent-coral)" }}
-                                                />
-                                                <span className="text-gray-700 leading-relaxed">{item}</span>
+                                                <span className="mt-0.5 w-5 h-5 rounded-full bg-olive/10 text-olive flex items-center justify-center flex-shrink-0">
+                                                    <Check className="w-3 h-3" />
+                                                </span>
+                                                <span className="text-olive-dark/80 leading-relaxed">{item}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
                                 {service.footer && (
-                                    <p className="text-sm text-gray-600 italic border-l-4 pl-4 py-2"
-                                        style={{ borderColor: "var(--accent-gold)" }}>
+                                    <p className="font-display text-lg italic text-olive leading-snug border-l-2 border-coral/60 pl-5 py-1">
                                         {service.footer}
                                     </p>
                                 )}
@@ -159,10 +146,10 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                     </div>
                                 )}
                                 {service.images && (
-                                    <div className="mt-6 flex justify-center">
+                                    <div className="mt-8">
                                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                                             {service.images.map((img, idx) => (
-                                                <div key={idx} className="w-full max-w-[300px] mx-auto aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                                                <div key={idx} className="w-full aspect-square overflow-hidden rounded-2xl">
                                                     <Image
                                                         src={img}
                                                         alt={`${service.title} ${idx + 1}`}
@@ -180,16 +167,13 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                 )}
 
                                 {/* CTA Button */}
-                                <div className="mt-8 text-center">
+                                <div className="mt-10 text-center">
                                     <button
                                         onClick={() => {
                                             onClose();
                                             document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
                                         }}
-                                        className="cursor-pointer px-8 py-4 rounded-full text-white font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
-                                        style={{
-                                            background: "linear-gradient(135deg, var(--gradient-start) 0%, var(--primary-green) 100%)"
-                                        }}
+                                        className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 rounded-full bg-olive text-peach font-semibold text-lg transition-colors hover:bg-olive-dark"
                                     >
                                         Agenda tu visita
                                     </button>
