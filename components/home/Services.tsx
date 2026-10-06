@@ -108,9 +108,9 @@ export default function Services() {
       footer: "Con un enfoque realista, personalizado y sin restricciones innecesarias. Te acompañaré con cercanía y evidencia científica para que vivas esta etapa con tranquilidad y confianza.",
       startingPrice: "80€",
       images: [
-        "/images/pregnancy_1.jpg",
-        "/images/ecografia.jpg",
         "/images/embarazo_2.jpeg",
+        "/images/ecografia.jpg",
+        "/images/nutri_embarazo_2.jpeg",
         "/images/nutri_embarazo_1.jpeg"
       ]
     },

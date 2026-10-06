@@ -40,15 +40,15 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 sm:px-6 pt-3 sm:pt-4">
-      <nav
-        className={`mx-auto max-w-6xl rounded-full transition-all duration-500 ${
-          solid
-            ? "bg-ivory/85 backdrop-blur-xl shadow-[0_8px_30px_rgba(44,54,33,0.12)] border border-olive/10"
-            : "bg-transparent border border-transparent"
-        }`}
-      >
-        <div className="flex items-center justify-between pl-5 pr-2 py-2">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        solid
+          ? "bg-ivory/90 backdrop-blur-xl border-b border-olive/10 shadow-[0_4px_20px_rgba(44,54,33,0.06)]"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav>
+        <div className="mx-auto max-w-6xl flex items-center justify-between px-5 sm:px-6 py-3 sm:py-4">
           <button
             onClick={() => (isHomePage ? scrollToSection("inicio") : router.push("/"))}
             className={`cursor-pointer font-display text-xl sm:text-2xl tracking-tight transition-colors ${
@@ -102,11 +102,11 @@ export default function Navbar() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden mx-auto max-w-6xl mt-2 rounded-3xl bg-ivory/95 backdrop-blur-xl shadow-xl border border-olive/10 p-3"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden overflow-hidden border-t border-olive/10 px-3 pb-4 pt-2"
           >
             {navItems.map((item) => (
               <button

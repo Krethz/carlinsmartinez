@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check } from "lucide-react";
@@ -33,6 +33,21 @@ interface ServiceModalProps {
 }
 
 export default function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
+    useEffect(() => {
+        if (!isOpen) return;
+
+        document.body.style.overflow = "hidden";
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onClose();
+        };
+        window.addEventListener("keydown", handleEscape);
+
+        return () => {
+            document.body.style.overflow = "";
+            window.removeEventListener("keydown", handleEscape);
+        };
+    }, [isOpen, onClose]);
+
     if (!service) return null;
 
     return (
@@ -45,11 +60,11 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm"
+                        className="fixed inset-0 bg-black/60 z-[60] backdrop-blur-sm"
                     />
 
                     {/* Modal */}
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-none">
+                    <div className="fixed inset-0 z-[60] flex items-center justify-center p-2 sm:p-4 pointer-events-none">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 40 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -63,7 +78,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
                                 <button
                                     onClick={onClose}
                                     aria-label="Cerrar"
-                                    className="cursor-pointer absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                                    className="cursor-pointer absolute top-3 right-3 z-20 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
                                 >
                                     <X className="w-5 h-5" />
                                 </button>
