@@ -5,6 +5,7 @@ import { GraduationCap, Leaf, Dumbbell, HeartHandshake } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const formacion = [
+  "Grado en Ciencia y Tecnología de los Alimentos (UB)",
   "Grado en Nutrición Humana y Dietética (Universidad de Vic)",
   "Health Coach (Institute For Integrative Nutrition, NY)",
   "Formación en nutrición y suplementación deportiva (CEAN)",
